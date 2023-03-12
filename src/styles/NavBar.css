@@ -1,5 +1,9 @@
+.navLink{
+    transition: .2s;
+}
 .navLink:hover{
     
     transform: scale(1.1);
+    
     
 }

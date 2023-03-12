@@ -1,15 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+const CategoriesItems = ({id, image , title, price}) => {
 
 
-const Item = ({id, title, image, price}) => {
-
-  
   return (
     <div>       
           
-            <div key={id} className="group relative hover:cursor-pointer rounded-[10px] w-[240px] ">
+            <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[10px] w-[250px] ">
               <div className="   w-full overflow-hidden  rounded-md bg-gray-100  group-hover:opacity-75  lg:aspect-none lg:h-80">
                 <Link to={`/item/${id}`}>
                 <img
@@ -38,4 +36,4 @@ const Item = ({id, title, image, price}) => {
   )
 }
 
-export default Item
+export default CategoriesItems
