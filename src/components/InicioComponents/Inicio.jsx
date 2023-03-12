@@ -4,7 +4,7 @@ import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 
 import CategoriesItemListContainer from './CategoriesItemListContainer'
 
-
+import { motion } from 'framer-motion'
 
 const Inicio = () => {
 
@@ -44,7 +44,7 @@ const Inicio = () => {
   return (
 
     <>
-    <div className='w-[100%] h-[90vh] relative m-auto    group rounded-[15px]' > 
+    <motion.div animate={{scale:1}} initial={{scale:0}} transition={{duration:.7}}  className='w-[100%] h-[90vh] relative m-auto transition duration-300   group rounded-[15px]' > 
 
       <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='w-full h-full rounder-2xl bg-center bg-cover duration-500  '></div>
 
@@ -57,7 +57,7 @@ const Inicio = () => {
       <div  className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactRight  onClick={nextSlide} size={30} />
       </div>
-    </div>
+    </motion.div>
 
 
     <CategoriesItemListContainer />
