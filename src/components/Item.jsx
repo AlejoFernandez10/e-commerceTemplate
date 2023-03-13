@@ -29,7 +29,7 @@ const Item = ({id, title, image, price}) => {
                   </h3>
                   
                 </div>
-                <p  className="text-sm font-medium text-teal-600"   >${price}</p>
+                <p  className="text-sm font-medium text-pink-600"   >${price}</p>
               </div>
             </div>
          

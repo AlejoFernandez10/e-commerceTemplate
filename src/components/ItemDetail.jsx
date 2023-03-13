@@ -210,7 +210,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        XS
                      </span>
@@ -225,7 +225,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        S
                      </span>
@@ -240,7 +240,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        M
                      </span>
@@ -255,7 +255,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        L
                      </span>
@@ -270,7 +270,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        XL
                      </span>
@@ -290,7 +290,7 @@ const ItemDetail = ({prods}) => {
                     <Link to={"/cart"}>
                     <button
                    type="submit"
-                   className="block rounded bg-transparent border border-teal-600 px-5 py-3 text-xs font-medium text-black transition duration-200 hover:bg-teal-600 hover:text-white"
+                   className="block rounded bg-transparent border border-pink-600 px-5 py-3 text-xs font-medium text-black transition duration-200 hover:bg-pink-600 hover:text-white"
                  >
                    Add to Cart
                  </button>
