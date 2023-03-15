@@ -42,9 +42,9 @@ const ItemListContainer = () => {
 
 
     return (
-      <>
-          <span id='catalogo'></span>
-        <div className="banner mt-[30px] w-[full] h-[40vh] bg-teal-100 flex justify-center items-center"><p className='text-[40px] text-gray-50'>Catálogo</p></div>
+      <div>
+        <span id='catalogo'></span>
+        <div className="banner  w-[full] h-[40vh] bg-teal-100 flex justify-center items-center"><p className='text-[40px] text-gray-50'>Catálogo</p></div>
         <div className="bg-white min-h-[100vh] max-w-[1000px] m-auto  flex flex-col justify-start items-center ">
 
          {/* ------------- DROPDOWN ------------------*/}
@@ -133,7 +133,7 @@ const ItemListContainer = () => {
           { category ? <ItemList productos={catFilter}/> : <ItemList productos={productos}/>}
           
         </div>
-        </>
+        </div>
       )
 }
 

@@ -10,12 +10,9 @@ import ItemCount from './ItemCount';
 const ItemDetail = ({prods}) => {
 
     const {id } = useParams();
-
+  console.log(prods)
 
     const prodsFilter = prods.filter((prod) => prod.id == id );    
-    
-
-  
 
    
 
@@ -24,8 +21,8 @@ const ItemDetail = ({prods}) => {
     {prodsFilter?.map((prod)=>(
        
      
-     <div key={prod.id}>
-       <div className="relative mx-auto max-w-screen-xl px-4 py-8 mt-[50px]">
+     <div key={prod.id} >
+       <div className="relative mx-auto max-w-screen-xl px-4 py-8 ">
          <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
            <div className="grid grid-cols-2 gap-4 md:grid-cols-1 mt-[50px]">
              <img
@@ -144,6 +141,8 @@ const ItemDetail = ({prods}) => {
                  </p>
                  
                </div>
+
+               {prod.category != "Men's clothing"}
       
                <form className="mt-8">
                <fieldset>
@@ -159,7 +158,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        Red
                      </span>
@@ -174,7 +173,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        Blue
                      </span>
@@ -189,7 +188,7 @@ const ItemDetail = ({prods}) => {
                      />
      
                      <span
-                       className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-teal-600 peer-checked:text-white"
+                       className="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-pink-600 peer-checked:text-white"
                      >
                        Green
                      </span>
@@ -283,18 +282,18 @@ const ItemDetail = ({prods}) => {
                    
      
 
-                      <ItemCount />
+                      <ItemCount
+                      id={prod.id}
+                      image={prod.image}
+                      title={prod.title}
+                      price={prod.price}
 
-                 </div>
 
-                    <Link to={"/cart"}>
-                    <button
-                   type="submit"
-                   className="block rounded bg-transparent border border-pink-600 px-5 py-3 text-xs font-medium text-black transition duration-200 hover:bg-pink-600 hover:text-white"
-                 >
-                   Add to Cart
-                 </button>
-                    </Link>
+                      />
+
+                 </div>                    
+                    
+                    
                     
                     
                  

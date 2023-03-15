@@ -9,8 +9,8 @@ const CategoriesItems = ({id, image , title, price, discount}) => {
   return (
     <div>       
           
-            <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[10px] w-[250px] ">
-              <div className="   w-[95%] m-auto overflow-hidden  rounded-md bg-gray-50  group-hover:opacity-75  lg:aspect-none lg:h-40">
+            <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[10px] w-[245px] ">
+              <div className=" m-auto overflow-hidden  rounded-md bg-gray-50  group-hover:opacity-75  lg:aspect-none lg:h-[8rem]">
                
                 <Link to={`/item/${id}`}>                
                 <img
@@ -30,7 +30,7 @@ const CategoriesItems = ({id, image , title, price, discount}) => {
                   </h3>
                   
                 </div>                                                                                          {/* DESCUENTO */}
-                <div  className="text-md font-medium text-pink-600 "><div className='w-[70%] h-auto'>  <span className=' line-through opacity-60 '> ${price} </span> ${Math.floor(price - (price*0.3))}  </div> <span className='w-[7ch] text-center text-white rounded-[5px] font-semibold text-sm  absolute right-0 bottom-5   bg-pink-500'>{`${discount}`}</span></div>
+                <div  className="text-md font-medium text-pink-600 "><div className='w-[70%] h-auto'>  <span className=' line-through opacity-60 '> ${price} </span> ${Math.floor(price - (price*0.3))}  </div> <span className='w-[7ch] text-center text-white rounded-[5px] font-semibold text-sm  absolute right-0 bottom-5   bg-pink-700'>{`${discount}`}</span></div>
               </div>
             </div>
          

@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
     
 
   return (
-    <div>
+    <div className='pt-[100px] w-full flex justify-center items-center'> 
         <ItemDetail prods={productos} />
     </div>
   )

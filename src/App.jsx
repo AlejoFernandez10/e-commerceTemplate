@@ -1,3 +1,4 @@
+import { CartContextProvider } from './context/CartContextProvider';
 import ItemDetailContainer from './components/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer'
 
@@ -12,6 +13,8 @@ import Cart from './components/Cart/Cart';
 function App() {
   
   return (
+
+    <CartContextProvider>
 
     <BrowserRouter>
 
@@ -37,7 +40,8 @@ function App() {
         
       </div>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartContextProvider>
   )
 }
 

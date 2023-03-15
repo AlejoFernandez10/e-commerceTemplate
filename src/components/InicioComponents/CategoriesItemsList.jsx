@@ -43,7 +43,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
             
             <div className='inicio-prods-container w-full'>
 
-            <div className='min-h-[30vh] bg-gray-100 mb-[6rem] w-full flex justify-center '>
+            <div className='min-h-[30vh] bg-gray-50 mb-[5rem] w-full flex justify-center '>
 
                 <div className='grid place-items-center w-full sm:grid-cols-3 max-w-[1200px] relative'>  {/* ESTE DIV CENTRA */}
                     <div className='  flex items-center justify-center  m-auto pt-5 pb-5 '>
@@ -81,18 +81,18 @@ const CategoriesItemsList = ({itemsPopulares}) => {
 
 
 
-                <div className=' flex max-w-[1350px] m-auto ' >
-                    <h2 className='  mb-[80px]   mt-[120px] text-[26px] sm:text-[30px] md:text-[35px] text-gray-700 px-4 font-semibold border-l-4 border-pink-600 '>Productos  <span className='text-pink-600'>Populares</span></h2>       
+                <div className=' flex max-w-[1210px] m-auto ' >
+                    <h2 className='  mb-[40px]   mt-[80px] text-[26px] sm:text-[30px] md:text-[32px] text-gray-700 px-3 font-semibold border-l-4 border-pink-600 '> <span className='text-gray-700'>Populares</span></h2>       
                 </div>
                
         
                             
                 
-                <motion.div initial={{x:-200}} whileInView={{x:0}} transition={{duration:.5}} viewport={{once:true}} className='relative flex  items-center  max-w-[1500px] m-auto'>
+                <motion.div initial={{x:-200}} whileInView={{x:0}} transition={{duration:.5}} viewport={{once:true}} className='relative flex  items-center  max-w-[1300px] m-auto'>
 
                     
                     <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={40} />
-                <div id='slider'  className='w-full h-full overflow-x-scroll flex whitespace-nowrap scroll-smooth gap-8  scrollbar-hide'>
+                <div id='slider'  className='w-full h-full overflow-x-scroll flex whitespace-nowrap scroll-smooth gap-5  scrollbar-hide'>
                      
                      {itemsPopulares.map((item)=>(
 
@@ -104,6 +104,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
                          
                          discount={'30% Off'}
                          />
+                         
                      ))} 
              
          
@@ -112,13 +113,13 @@ const CategoriesItemsList = ({itemsPopulares}) => {
                 </motion.div>
                 
                 
-                <div className=' flex max-w-[1350px] m-auto' >
-                    <h2 className=' mb-[80px]   mt-[100px] text-[26px] sm:text-[30px] md:text-[35px] text-gray-700 px-4 font-semibold border-l-4 border-pink-600 '>Recien  <span className='text-pink-600'>Llegados</span></h2>       
+                <div className=' flex max-w-[1210px] m-auto' >
+                    <h2 className=' mb-[40px]   mt-[100px] text-[26px] sm:text-[30px] md:text-[32px] text-gray-700 px-3 font-semibold border-l-4 border-pink-600 '> <span className='text-gray-700'>Nuevos</span></h2>       
                 </div>
         
                             
                 
-                <motion.div initial={{x:200}} whileInView={{x:0}} transition={{duration:.5}} viewport={{once:true}} className='relative flex  items-center max-w-[1500px] m-auto'>
+                <motion.div initial={{x:200}} whileInView={{x:0}} transition={{duration:.5}} viewport={{once:true}} className='relative flex  items-center max-w-[1300px] m-auto'>
 
                     
                     <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft2} size={40} />
