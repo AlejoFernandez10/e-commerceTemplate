@@ -4,14 +4,11 @@ import React from 'react'
 
 import Item from './Item'
 
-const ItemList = ({ productos }) => {
-
-    
-
+const ItemList = ({ prods }) => {
+   
   
-
     
-    if(productos){
+    if(prods){
         return (
             <div >
                  <div className="w-100% flex flex-col justify-end items-end " >
@@ -20,13 +17,13 @@ const ItemList = ({ productos }) => {
 
               <div className="catalogo-container"></div>
                 <div className="  grid grid-cols-1 place-items-center gap-y-20 gap-x-4 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:gap-x-20  ">
-                     { productos.map((prod)=>(
+                     { prods.map((prod)=>(
                         <Item 
                         id={prod.id}
-                        title={prod.title}
-                        
-                        image={prod.image}
-                        price={prod.price}
+                        nombre={prod.nombre}
+                        categoria={prod.categoria}
+                        imagen={prod.imagen}
+                        precio={prod.precio}
                         />
                 ))
         

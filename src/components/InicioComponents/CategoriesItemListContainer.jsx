@@ -2,6 +2,9 @@ import React from 'react'
 
 import { useState, useEffect } from 'react'
 
+import { getFirestore, getDocs, collection } from 'firebase/firestore'
+
+
 import FeaturedItemsList from './CategoriesItemsList'
 
 const CategoriesItemListContainer = () => {
@@ -9,27 +12,24 @@ const CategoriesItemListContainer = () => {
     const [productosPopulares, setProductosPopulares] = useState()
   
 
-  const getItems = async()=>{
-    const response = await fetch('https://fakestoreapi.com/products')
-
-
-    const responseJSON = await response.json();
-
-    ;
-
-    
-
-    setProductosPopulares(responseJSON);
-
-    
-           
-  } 
   
-    useEffect(()=>{
-      getItems()
-      
-    }, [])
+  useEffect(()=>{
 
+    const db = getFirestore();
+
+    const itemsCollection = collection(db,"productos");
+
+    getDocs(itemsCollection).then((snapshot) => {
+
+      const docs = snapshot.docs.map((doc)=> ({
+        ...doc.data(),
+        id: doc.id
+      }))
+      setProductosPopulares(docs)
+              
+    })
+
+  }, [])
     
 
   return (

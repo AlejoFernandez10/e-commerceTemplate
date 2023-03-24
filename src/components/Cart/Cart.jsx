@@ -7,11 +7,16 @@ import { CartContext } from "../../context/CartContextProvider"
 const Cart =() => {
   
   const [cart, setCart] = useContext(CartContext)
-  const [total, setTotal] = useState(0)
+  
+  
+  let precioTotal = 0;
 
-  const [prod, setProd] = useState()
+  cart.forEach(producto => {
+      precioTotal += ( producto.precio * producto.cantidad)
+  });
 
 
+  
   
 
   if(cart.length === 0){
@@ -39,13 +44,13 @@ const Cart =() => {
                     
                      <li className=" flex items-center gap-4" key={prod.id}>
                      <img
-                       srcSet={prod.image}
+                       srcSet={prod.imagen}
                        alt=""
                        className="h-16 w-16 rounded object-cover"
                      />
          
                      <div>
-                       <h3 className="text-sm text-gray-900">{prod.title}</h3>
+                       <h3 className="text-sm text-gray-900">{prod.nombre}</h3>
          
                        <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
                          <div>
@@ -60,7 +65,7 @@ const Cart =() => {
 
                          <div>
                            <dt className="inline">Price:</dt>
-                           <dd className="inline font-bold text-[13px] ml-[5px]">${Math.floor(prod.price)}</dd>
+                           <dd className="inline font-bold text-[13px] ml-[5px]">${Math.floor(prod.precio)}</dd>
                          </div>
                        </dl>
                      </div>
@@ -103,30 +108,27 @@ const Cart =() => {
       
               </ul>
       
-              <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
+              <div className="mt-8 flex justify-end border-t border-gray-100 pt-8 ">
                 <div className="w-screen max-w-lg space-y-4">
                   <dl className="space-y-0.5 text-sm text-gray-700">
                     <div className="flex justify-between">
                       <dt>Subtotal</dt>
-                      <dd>$250</dd>
+                      <dd> ${ Math.floor(precioTotal)} </dd>
                     </div>
       
                     <div className="flex justify-between">
                       <dt>Iva</dt>
-                      <dd>$25</dd>
+                      <dd>21%</dd>
                     </div>
       
-                    <div className="flex justify-between">
-                      <dt>Descuento</dt>
-                      <dd>-$20</dd>
-                    </div>
+                    
       
                     <div className="flex justify-between !text-base font-medium">
                       <dt>Total</dt>
                       
-                      {cart.map((prod)=>{
-                        <dd>{prod.price} </dd>
-                      })} 
+                      
+                        <dd> ${Math.floor(precioTotal + (precioTotal * 0.21) )} </dd>
+                       
                      
                     </div>
                   </dl>

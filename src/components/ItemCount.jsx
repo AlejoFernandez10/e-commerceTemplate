@@ -3,7 +3,7 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../context/CartContextProvider';
 
 
-const ItemCount = ({id, title, image, price}) => {
+const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
     
   const [cart, setCart] = useContext(CartContext)
   const [count, setCount ] = useState(1);
@@ -25,7 +25,9 @@ const ItemCount = ({id, title, image, price}) => {
       const isItem = currentItems.find((item) => item.id === id)
 
       if(isItem){
+
         return currentItems.map((item)=>{
+          
           if(item.id === id){
             return{... item, cantidad: item.cantidad + count}
           }
@@ -34,7 +36,7 @@ const ItemCount = ({id, title, image, price}) => {
           }
         });
       }else{
-        return [... currentItems, {id, cantidad: count, price, image, title}]
+        return [... currentItems, {id, cantidad: count, precio, imagen, nombre, categoria}]
       }
 
     })

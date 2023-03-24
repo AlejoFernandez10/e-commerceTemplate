@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import '../styles/itemListContainer.css'
 import ItemList from './ItemList'
 
+import {collection, getDocs, getFirestore } from 'firebase/firestore'
 
 
 import { Fragment } from 'react'
@@ -19,25 +20,34 @@ const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
 
-  const { category } = useParams(); 
+  const { categoria } = useParams(); 
 
 
-    useEffect(()=>{
-      const getData = async()=>{
-        const response = await fetch('https://fakestoreapi.com/products')
+  useEffect(()=>{
     
+    const db = getFirestore()
+    const itemsCollection = collection(db, "productos");
     
-        const responseJSON = await response.json()
-    
-        setProductos(responseJSON)       
-      }
-       
-      getData()
-     
-    },[])
+    getDocs(itemsCollection).then((snapshot) => {
+
+      const docs = snapshot.docs.map((doc)=> ({
+        ...doc.data(),
+        id: doc.id
+      }))
+      setProductos(docs)
+
+      
+
+        
+    })
+
     
 
-    const catFilter = productos.filter((prod) => prod.category == category)
+
+  }, []) 
+    
+
+    const catFilter = productos.filter((producto) => producto.categoria === categoria)
 
 
 
@@ -72,7 +82,7 @@ const ItemListContainer = () => {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link to={`/catalogo/${`women's clothing`}`}
+                <Link to={`/catalogo/${`women`}`}
                   
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -85,7 +95,7 @@ const ItemListContainer = () => {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link to={`/catalogo/${`men's clothing`}`}
+                <Link to={`/catalogo/${`men`}`}
                   
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -130,7 +140,7 @@ const ItemListContainer = () => {
 
           </div>
 
-          { category ? <ItemList productos={catFilter}/> : <ItemList productos={productos}/>}
+          { categoria ? <ItemList prods={catFilter} /> : <ItemList prods={productos} />}
           
         </div>
         </div>

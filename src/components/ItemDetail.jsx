@@ -1,58 +1,80 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom';
-import Item from './Item';
 
 import ItemCount from './ItemCount';
+
+import {doc, getDoc, getFirestore, } from 'firebase/firestore'
 
 
 
 const ItemDetail = ({prods}) => {
 
-    const {id } = useParams();
-  console.log(prods)
+    const { id } = useParams();
 
-    const prodsFilter = prods.filter((prod) => prod.id == id );    
+    const [prod, setProd] = useState([])
+
+
+
+    useEffect(()=>{
+
+      const db = getFirestore();
+      const itemId = doc(db, "productos", `${id}`)
+
+      getDoc(itemId).then((snapshot)=>{
+
+        if(snapshot.exists()){
+
+          setProd(snapshot.data())
+        
+        }else{
+          console.log("Este documento no existe")
+        }
+      })
+    },[])
+
+
+
+    const prodsFilter = prods.filter((producto) => producto.id == id );    
 
    
 
   return (
     <>
-    {prodsFilter?.map((prod)=>(
+    {prodsFilter?.map((producto)=>(
        
      
-     <div key={prod.id} >
+     <div key={producto.id} >
        <div className="relative mx-auto max-w-screen-xl px-4 py-8 ">
          <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
            <div className="grid grid-cols-2 gap-4 md:grid-cols-1 mt-[50px]">
              <img
                alt="Les Paul"
-               srcSet={prod.image}
+               srcSet={producto.imagen}
                className="aspect-square w-full rounded-xl object-contain h-[80%]"
              />
      
              <div className="grid grid-cols-2 gap-4 ">
                <img
                  alt="Les Paul"
-                 srcSet={prod.image}
+                 srcSet={producto.imagen}
                  className="aspect-square w-full rounded-xl object-cover cursor-pointer"
                />
      
                <img
                  alt="Les Paul"
-                 srcSet={prod.image}
+                 srcSet={producto.imagen}
                  className="aspect-square w-full rounded-xl object-cover cursor-pointer"
                />
      
                <img
                  alt="Les Paul"
-                 srcSet={prod.image}
+                 srcSet={producto.imagen}
                  className="aspect-square w-full rounded-xl object-cover cursor-pointer"
                />
      
                <img
                  alt="Les Paul"
-                 srcSet={prod.image}
+                 srcSet={producto.imagen}
                  className="aspect-square w-full rounded-xl object-cover cursor-pointer"
                />
              </div>
@@ -68,7 +90,7 @@ const ItemDetail = ({prods}) => {
              <div className="mt-8 flex justify-between">
                <div className="max-w-[35ch] space-y-2">
                  <h1 className="text-xl font-bold sm:text-1xl">
-                   {prod.title}
+                   {producto.nombre}
                  </h1>
      
                  <p className="text-sm">Highest Rated Product</p>
@@ -131,18 +153,18 @@ const ItemDetail = ({prods}) => {
                  </div>
                </div>
      
-               <p className="text-lg font-bold">${prod.price}</p>
+               <p className="text-lg font-bold">${producto.precio}</p>
              </div>
      
              <div className="mt-4">
                <div className="prose max-w-none">
                  <p className='text-sm'>
-                   {prod.description}
+                   {producto.descripcion}
                  </p>
                  
                </div>
 
-               {prod.category != "Men's clothing"}
+               {producto.categoria != "men"}
       
                <form className="mt-8">
                <fieldset>
@@ -278,15 +300,15 @@ const ItemDetail = ({prods}) => {
                </fieldset>
      
                <div className="mt-8 flex gap-4">
-                 <div>
-                   
+                 <div>                  
      
 
                       <ItemCount
-                      id={prod.id}
-                      image={prod.image}
-                      title={prod.title}
-                      price={prod.price}
+                      id={producto.id}
+                      imagen={producto.imagen}
+                      nombre={producto.nombre}
+                      precio={producto.precio}
+                      categoria={producto.categoria}
 
 
                       />

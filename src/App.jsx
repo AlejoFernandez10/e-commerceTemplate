@@ -8,7 +8,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar';
 import Cart from './components/Cart/Cart';
 
-
+import Document from './components/Document';
 
 function App() {
   
@@ -28,7 +28,7 @@ function App() {
           <Route exact path={'/'} element={<Inicio /> }></Route>
           <Route exact path={'/catalogo'} element={<ItemListContainer /> }></Route>
           
-          <Route exact path={'/catalogo/:category'} element={<ItemListContainer /> }></Route>
+          <Route exact path={'/catalogo/:categoria'} element={<ItemListContainer /> }></Route>
 
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
 
@@ -39,6 +39,8 @@ function App() {
       
         
       </div>
+      
+      <Document />
 
       </BrowserRouter>
     </CartContextProvider>

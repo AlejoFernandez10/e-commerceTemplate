@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const CategoriesItems = ({id, image , title, price, discount}) => {
+const CategoriesItems = ({id, imagen , nombre, precio, discount}) => {
 
 
   
@@ -14,7 +14,7 @@ const CategoriesItems = ({id, image , title, price, discount}) => {
                
                 <Link to={`/item/${id}`}>                
                 <img
-                  src={image}
+                  src={imagen}
                   alt=""
                   className="h-[150px] m-auto  w-[210px] object-contain object-center lg:h-full lg:w-full transition duration-300 group-hover:scale-110" 
                 /></Link>
@@ -25,12 +25,12 @@ const CategoriesItems = ({id, image , title, price, discount}) => {
                   <h3  className=" text-sm text-gray-700 py-3 text-[10px] ">
                     
                       
-                      {title}
+                      {nombre}
                     
                   </h3>
                   
                 </div>                                                                                          {/* DESCUENTO */}
-                <div  className="text-md font-medium text-pink-600 "><div className='w-[70%] h-auto'>  <span className=' line-through opacity-60 '> ${price} </span> ${Math.floor(price - (price*0.3))}  </div> <span className='w-[7ch] text-center text-white rounded-[5px] font-semibold text-sm  absolute right-0 bottom-5   bg-pink-700'>{`${discount}`}</span></div>
+                <div  className="text-md font-medium text-pink-600 "><div className='w-[70%] h-auto'>  <span className=' line-through opacity-60 '> ${precio} </span> ${Math.floor(precio - (precio*0.3))}  </div> <span className='w-[7ch] text-center text-white rounded-[5px] font-semibold text-sm  absolute right-0 bottom-5   bg-pink-700'>{`${discount}`}</span></div>
               </div>
             </div>
          

@@ -9,6 +9,8 @@ import { motion } from 'framer-motion'
 
 
 
+
+
 const CategoriesItemsList = ({itemsPopulares}) => {
 
         const slideLeft = ()=>{
@@ -31,6 +33,9 @@ const CategoriesItemsList = ({itemsPopulares}) => {
             let slider = document.getElementById(`slider2`);
             slider.scrollLeft = slider.scrollLeft + 500
         }
+
+
+
     
 
    
@@ -43,7 +48,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
             
             <div className='inicio-prods-container w-full'>
 
-            <div className='min-h-[30vh] bg-gray-50 mb-[5rem] w-full flex justify-center '>
+            <div className='min-h-[23vh] bg-gray-50 mb-[5rem] w-full flex justify-center '>
 
                 <div className='grid place-items-center w-full sm:grid-cols-3 max-w-[1200px] relative'>  {/* ESTE DIV CENTRA */}
                     <div className='  flex items-center justify-center  m-auto pt-5 pb-5 '>
@@ -63,18 +68,28 @@ const CategoriesItemsList = ({itemsPopulares}) => {
             
             </div>
 
-            
 
-            <div  className="  img-catalogo-container w-[full] min-h-[50vh]   grid grid-cols-1 gap-10 place-items-center sm:grid-cols-2 sm:w-[600px] sm:m-auto md:w-[745px] md:gap-0 lg:w-[800px]" >
+                <div className='w-[full] sm:w-[380px]'>
                 
-            <Link to={'/catalogo'}><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.5}} viewport={{once:true}} className='img-catalogo catalogo relative  h-[45vh] w-[300px] rounded-[10px] sm:h-[61.5vh]  sm:w-[280px] md:h-[65vh] md:w-[350px] lg:w-[370px] lg:h-[71.5vh]  text-gray-50 hover:text-pink-600 ' ><p className='absolute  bottom-5 left-5 text-[25px] '>Ropa </p> </motion.div></Link>
 
-                <div  className="gridSecondCol">
-                <Link to={'/catalogo/jewelery'} ><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.5}} viewport={{once:true}} className='img-catalogo h-[45vh] w-[300px] jewelry mb-10 relative rounded-[10px]  sm:mb-3 sm:h-[30vh]  sm:min-w-[320px] sm:mr-5 md:h-[32vh] md:w-[360px] lg:w-[390px] lg:h-[35vh] text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Joyas </p> </motion.div></Link>
-                <Link to={'/catalogo/electronics'} ><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.5}} viewport={{once:true}} className='img-catalogo  h-[45vh] w-[300px] kids relative rounded-[10px] sm:h-[30vh] sm:min-w-[320px] sm:mr-5 md:h-[32vh] md:w-[360px] lg:w-[390px] lg:h-[35vh] text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Tecnología</p> </motion.div></Link>
+                </div>
+            
+            <div  className="  img-catalogo-container w-[full] min-h-[50vh]   grid grid-cols-1 gap-10 place-items-center  sm:w-[600px] sm:m-auto md:w-[745px] md:gap-0 lg:w-[800px]" >
+                
+            <h2 className='text-center  justify-self-center sm:justify-self-start  ml-2 w-[15ch] text-[27px] md:text-[35px] md:mb-[30px] text-gray-700  border-l-[3px] border-l-pink-500'>Browse by category</h2>
+
+                <div  className="gridSecondCol flex flex-col sm:flex-row gap-3">
+                <Link to={'/catalogo'}><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.5}} viewport={{once:true}} className='img-catalogo catalogo relative mb-7  sm:mb-0 h-[35vh] w-[300px] rounded-[7px] sm:h-[61.8vh]  sm:w-[280px] md:h-[64.7vh] md:w-[350px]   text-gray-50 hover:text-pink-600 ' ><p className='absolute  bottom-5 left-5 text-[25px] '>Ropa </p> </motion.div></Link>
+                
+                <div>
+                    <Link to={'/catalogo/jewelery'} ><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.5}} viewport={{once:true}} className='img-catalogo h-[35vh] w-[300px] jewelry mb-10 relative rounded-[7px]  sm:mb-3 sm:h-[30vh]  sm:min-w-[320px] sm:mr-5 md:h-[32vh] md:w-[360px]  text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Joyas </p> </motion.div></Link>
+                    <Link to={`/catalogo/women`} ><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.5}} viewport={{once:true}} className='img-catalogo  h-[35vh] w-[300px] women relative rounded-[7px] sm:h-[30vh] sm:min-w-[320px] sm:mr-5 md:h-[31vh] md:w-[360px]   text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Women's</p> </motion.div></Link>
+                </div>
+                
                 
                 </div> 
                 
+                <Link to={`/catalogo/electronics`} ><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.5}} viewport={{once:true}} className='img-catalogo  h-[35vh] w-[300px] electronics relative rounded-[7px] sm:h-[30vh]   sm:w-[600px] sm:mr-5 md:h-[32vh] md:w-[720px] md:mt-3   text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Tecnología</p> </motion.div></Link>
 
             </div>
 
@@ -98,9 +113,10 @@ const CategoriesItemsList = ({itemsPopulares}) => {
 
                      <CategoriesItems
                          id={item.id}
-                         title={item.title}
-                         image={item.image}                    
-                         price={item.price}
+                         nombre={item.nombre}
+                         imagen={item.imagen}
+                         categoria={item.categoria}                    
+                         precio={item.precio}
                          
                          discount={'30% Off'}
                          />

@@ -2,6 +2,8 @@ import React from 'react'
 
 import { useState, useEffect } from 'react'
 
+import {collection, getDocs, getFirestore} from 'firebase/firestore'
+
 import ItemDetail from './ItemDetail'
 
 
@@ -11,21 +13,23 @@ const ItemDetailContainer = () => {
   const [productos, setProductos] = useState([])
   
 
-  const getData = async()=>{
-    const response = await fetch('https://fakestoreapi.com/products')
-
-
-    const responseJSON = await response.json()
-
-    setProductos(responseJSON)       
-  } 
  
     useEffect(()=>{
 
-      setTimeout(()=>{
-        getData()
-      }, 500)
+     const db = getFirestore();
+     const prodsCollection = collection(db, "productos")
+     
+     getDocs(prodsCollection).then((snapshot)=>{
 
+      const prods = snapshot.docs.map((prod)=> ({
+
+        ...prod.data(),
+        id: prod.id
+      }))
+
+      setProductos(prods)
+     })
+     
     }, [])
 
     
