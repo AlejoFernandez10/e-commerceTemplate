@@ -1,10 +1,18 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+
+import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { CartContext } from '../context/CartContextProvider'
 import { useContext } from 'react'
 import CartLogo from '../assets/carrito.png'
 import { Link } from 'react-router-dom'
+
+import LoginNav from './Login/LoginNav'
+
+
+
+
+
+
 
 const navigation = [
   { name: 'Inicio', href: '/', current: false },
@@ -16,8 +24,6 @@ const navigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-
-
 
 
 
@@ -95,7 +101,10 @@ export default function Navbar() {
               
               
               <Link to={'/cart'} className='flex'><img srcSet={CartLogo} alt="CartImg" /><span className=' pr-[4px] pl-[4px] pb-0 pt-0 mb-3 text-white bg-pink-500 m-auto rounded-[50%]  text-[14px]'>{cantidad} </span></Link> 
+                      
 
+                 <Link to={"/login"} >Sign Up </Link>         
+                {/* <LoginNav /> */}
                 
               </div>
             </div>
@@ -118,7 +127,10 @@ export default function Navbar() {
                 </Disclosure.Button>
               ))}
             </div>
+
+            
           </Disclosure.Panel>
+          
         </>
       )}
     </Disclosure>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import '../styles/itemListContainer.css'
+import './itemListContainer.css'
 import ItemList from './ItemList'
 
 import {collection, getDocs, getFirestore } from 'firebase/firestore'

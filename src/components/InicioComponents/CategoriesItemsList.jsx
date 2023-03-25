@@ -106,7 +106,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
                 <motion.div initial={{x:-200}} whileInView={{x:0}} transition={{duration:.5}} viewport={{once:true}} className='relative flex  items-center  max-w-[1300px] m-auto'>
 
                     
-                    <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={40} />
+                    <MdChevronLeft className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%]'  onClick={slideLeft} size={40} />
                 <div id='slider'  className='w-full h-full overflow-x-scroll flex whitespace-nowrap scroll-smooth gap-5  scrollbar-hide'>
                      
                      {itemsPopulares.map((item)=>(
@@ -125,7 +125,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
              
          
                  </div>
-                 <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={40} />
+                 <MdChevronRight className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%]' onClick={slideRight} size={40} />
                 </motion.div>
                 
                 
@@ -138,16 +138,18 @@ const CategoriesItemsList = ({itemsPopulares}) => {
                 <motion.div initial={{x:200}} whileInView={{x:0}} transition={{duration:.5}} viewport={{once:true}} className='relative flex  items-center max-w-[1300px] m-auto'>
 
                     
-                    <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft2} size={40} />
+                    <MdChevronLeft className='opacity-70  cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%]' onClick={slideLeft2} size={40} />
+                
                 <div id='slider2'  className='w-full h-full overflow-x-scroll flex whitespace-nowrap scroll-smooth gap-8  scrollbar-hide'>
                      
                      {itemsPopulares.map((item)=>(
 
                      <CategoriesItems
                          id={item.id}
-                         title={item.title}
-                         image={item.image}                    
-                         price={item.price}
+                         nombre={item.nombre}
+                         imagen={item.imagen}
+                         categoria={item.categoria}                    
+                         precio={item.precio}
                          discount={''}
                                                   
                          />
@@ -155,7 +157,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
              
          
                  </div>
-                 <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight2} size={40} />
+                 <MdChevronRight className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%] ' onClick={slideRight2} size={40} />
                 </motion.div>
         
             </div>
