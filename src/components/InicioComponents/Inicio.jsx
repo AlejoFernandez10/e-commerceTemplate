@@ -21,13 +21,13 @@ const Inicio = () => {
     {
       h2Content: "Zapatillas",
       discount:"40% Off",
-      url:'https://media.gq.com.mx/photos/62559a140f3903db4b64cc53/16:9/w_2560%2Cc_limit/tenis-nike-air-jordan-homage-elegantes-lanzamiento.jpeg'
+      url:'https://portotheme.com/html/wolmart/assets/images/demos/demo1/sliders/shoes.png'
       ,mt:'20px'
     },
     {      
-      h2Content: "Lentes de sol",
+      h2Content: "Smart Watch",
       discount:"30% Off",
-      url:'https://images.unsplash.com/photo-1610904329458-2512c4748c8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80'      
+      url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-05.png'      
       ,mt:'0px'
     }
   ]
@@ -59,11 +59,11 @@ const Inicio = () => {
 
       <div   className='w-full h-full  rounder-2xl   duration-500 flex flex-col items-center  sm:flex-row justify-center  md:w-[100%]'>
         
-        <motion.div className=' h-[40%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto  '>
-          <div className='text-xs text-center text-pink-900 '>Tienda E-commerce</div>
-          <div  className='text-center text-5xl mb-10 w-[100%] font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-purple-300 sm:text-6xl md:text-7xl  md:text-center  lg:text-[80px]  ' ><span></span> {sliderItems[currentIndex].h2Content}</div>
+        <motion.div className=' h-[30%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto  '>
+          <div className='text-sm text-center text-pink-900 '>Tienda E-commerce</div>
+          <div  className='text-center text-5xl mb-10 w-[100%] font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-purple-300 sm:text-6xl md:text-7xl  md:text-center  lg:text-[80px] xl:text-[90px] ' ><span></span> {sliderItems[currentIndex].h2Content}</div>
           
-          <div  className='self-center  mb-10 text-gray-800' ><span className='pr-5 '>+ 30 productos</span> <Link className=' py-2 px-4   md:py-3 md:px-6 border bg-pink-500 rounded-[8px] text-gray-50  transition duration-200 md:self-center  hover:bg-pink-400' to={'/catalogo'}>Comprar</Link></div>
+          <div  className='self-center  mb-10 text-gray-800' ><span className='pr-5 '>+ 100 productos</span> <Link className=' py-2 px-4   md:py-3 md:px-6 border bg-pink-500 rounded-[8px] text-gray-50  transition duration-200 md:self-center  hover:bg-pink-400' to={'/catalogo'}>Comprar!</Link></div>
         </motion.div>
        
        <div style={{backgroundImage:`url(${sliderItems[currentIndex].url}) `, marginTop:`${sliderItems[currentIndex].mt}` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[50%] md:w-[50%] md:h-[40%] md:ml-auto md '  > </div>

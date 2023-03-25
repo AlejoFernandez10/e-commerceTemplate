@@ -2,6 +2,11 @@ import React from 'react'
 import { useState, useContext } from 'react'
 import { CartContext } from '../context/CartContextProvider';
 
+import withReactContent from 'sweetalert2-react-content';
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
+
+const MySwal = withReactContent(swal)
+
 
 const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
     
@@ -43,6 +48,16 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
   }
 
 
+  const prodAgregado= ()=>{
+    MySwal.fire({
+      position: 'top-right',
+      icon: 'success',
+      title: 'Product agregado!',
+      showConfirmButton: false,
+      timer: 1000
+    })
+  }
+
 
   return (
     <div className='flex gap-2'>
@@ -53,7 +68,7 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
     
     </div>
     <div
-     onClick={()=> addToCart()}
+     onClick={()=> addToCart() & prodAgregado()}
      className="block cursor-pointer rounded bg-transparent border border-pink-600 px-5 py-3 text-xs font-medium text-black transition duration-200 hover:bg-pink-600 hover:text-white"
    >
      Add to Cart

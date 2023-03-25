@@ -31,7 +31,7 @@ export default function LoginForm() {
             <h1 className="text-2xl font-bold sm:text-3xl">Iniciar Sesión</h1>
       
             <p className="mt-4 text-gray-500">
-              Inicia sesion para tener tu informacion segura
+              Inicia sesion para tener tus historial de compras disponible
             </p>
           </div>
       
@@ -43,7 +43,7 @@ export default function LoginForm() {
                 <input
                   type="email"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                  placeholder="Enter email"
+                  placeholder="Correo Electrónico..."
                 />
       
                 <span
@@ -68,13 +68,13 @@ export default function LoginForm() {
             </div>
       
             <div>
-              <label for="password" className="sr-only">Password</label>
+              <label for="password" className="sr-only">Contraseña</label>
       
               <div className="relative">
                 <input
                   type="password"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                  placeholder="Enter password"
+                  placeholder="Contraseña..."
                 />
       
                 <span
@@ -106,13 +106,13 @@ export default function LoginForm() {
       
             <div className="flex items-center justify-between">
               <p className="text-sm text-gray-500">
-                No account?
-                <a className="underline" href="">Sign up</a>
+                No tenés cuenta?
+                <a className="underline" href="">Creá una</a>
               </p>
       
               <button
                 type="submit"
-                className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                className="inline-block rounded-lg bg-purple-500 px-5 py-3 text-sm font-medium text-white transition duration-200 hover:bg-purple-400"
               >
                 Sign in
               </button>
