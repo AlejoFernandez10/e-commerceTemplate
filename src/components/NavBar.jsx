@@ -8,16 +8,19 @@ import { Link } from 'react-router-dom'
 
 import LoginNav from './Login/LoginNav'
 
+import { UserAuth } from '../context/CartContextProvider'
 
 
 
+export default function Navbar() {
 
 
+const  {user, logout}  = UserAuth();
 
 const navigation = [
   { name: 'Inicio', href: '/', current: false },
   { name: 'Catalogo', href: '/catalogo', current: false },
-  { name: 'Servicios', href: '#', current: false },
+  { name: 'Mis compras', href: `${user ? '/miscompras' : '/login' }`, current: false },
   { name: 'Nosotros', href: '#', current: false },
 ]
 
@@ -27,10 +30,13 @@ function classNames(...classes) {
 
 
 
-export default function Navbar() {
 
 
-    const [cart, setCart] = useContext(CartContext)
+
+    const [cart, setCart] = useContext(CartContext);
+
+    
+
 
 
     const cantidad = cart.reduce((acumulador, actual) => {
@@ -60,17 +66,17 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
 
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center ml-[20%] justify-start sm:items-stretch sm:justify-start sm:ml-0">
                 
                 <Link to={'/'}>
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="block h-8 w-auto lg:hidden"
+                    className="inline h-8 w-auto lg:hidden"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
                   />
                   <img
-                    className="hidden h-8 w-auto lg:block"
+                    className="hidden h-8 w-auto lg:inline"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
                   />
@@ -78,7 +84,7 @@ export default function Navbar() {
                 </Link>
                 
                 <div className="hidden sm:ml-6 sm:block w-full "> 
-                  <div className="flex justify-center space-x-4 gap-2 ml-14">
+                  <div className="flex justify-center space-x-4 gap-2 ml-8">
 
                     {navigation.map((item) => (
                       <Link
@@ -102,8 +108,10 @@ export default function Navbar() {
               <Link to={'/cart'} className='flex'><img srcSet={CartLogo} alt="CartImg" /><span className=' h-[20px] w-[20px] text-center mb-3 text-white bg-pink-500 m-auto rounded-[50%]  text-[14px]'>{cantidad} </span></Link> 
                       
 
-                 <Link to={"/login"} className='border-[1px] border-purple-500 text-gray-700 px-3 py-1 ml-4 rounded-[5px] transition duration-200  hover:text-white hover:bg-purple-500'>Ingresar</Link>         
-                {/* <LoginNav /> */}
+                 
+                
+                { user ? <LoginNav /> : <Link to={"/login"} className='border-[1px] border-purple-500 text-gray-700 px-3 py-1 ml-4 rounded-[5px] text-[14px] transition duration-200  hover:text-white hover:bg-purple-500'>Ingresar</Link>         }
+                
                 
               </div>
             </div>

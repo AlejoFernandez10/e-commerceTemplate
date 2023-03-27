@@ -3,7 +3,9 @@ import React from 'react'
 
 import {Menu, Transition} from '@headlessui/react'
 import { Fragment } from 'react'
+import { Navigate } from 'react-router-dom'
 
+import { UserAuth } from '../../context/CartContextProvider'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -12,12 +14,23 @@ function classNames(...classes) {
 
 
 
-const Login = () => {
+const LoginNav = () => {
 
 
-
+  const {logout} = UserAuth()
   
 
+  const handleLogout = async ()=>{
+
+    try{
+      await logout()
+      Navigate('/')
+    } catch(e){
+      console.log(e.message)
+    }
+
+
+  }
 
   return (
     <>
@@ -67,12 +80,12 @@ const Login = () => {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <span
-                            href="#"
+                          <button
+                            onClick={handleLogout}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
-                          </span>
+                          </button>
                         )}
                       </Menu.Item>
                     </Menu.Items>
@@ -82,4 +95,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LoginNav

@@ -42,6 +42,7 @@ const Inicio = () => {
     const newIndex = isFirstSlide ? sliderItems.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex)
   }
+
   const nextSlide=()=>{
     const isLastSlide = currentIndex === sliderItems.length - 1;
 
@@ -49,6 +50,7 @@ const Inicio = () => {
     setCurrentIndex(newIndex)
     
   }
+  
 
   
 
@@ -57,9 +59,9 @@ const Inicio = () => {
     <div className='h-full w-full'>
     <motion.div  animate={{scale:1}} initial={{scale:0}} transition={{duration:.7}}   className='w-[100%] h-[100vh] relative m-auto transition duration-300    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
 
-      <div   className='w-full h-full  rounder-2xl   duration-500 flex flex-col items-center  sm:flex-row justify-center  md:w-[100%]'>
+      <div   className='w-full h-full  rounder-2xl   duration-500 flex flex-col items-center  sm:flex-row justify-center  md:w-[100%] xl:w-[85%] xl:m-auto '>
         
-        <motion.div className=' h-[30%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto  '>
+        <motion.div className=' h-[30%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto   '>
           <div className='text-sm text-center text-pink-900 '>Tienda E-commerce</div>
           <div  className='text-center text-5xl mb-10 w-[100%] font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-purple-300 sm:text-6xl md:text-7xl  md:text-center  lg:text-[80px] xl:text-[90px] ' ><span></span> {sliderItems[currentIndex].h2Content}</div>
           

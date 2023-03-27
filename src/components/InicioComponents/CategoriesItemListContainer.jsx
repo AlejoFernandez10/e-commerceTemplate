@@ -5,11 +5,14 @@ import { useState, useEffect } from 'react'
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
 
 
+
 import FeaturedItemsList from './CategoriesItemsList'
 
 const CategoriesItemListContainer = () => {
 
     const [productosPopulares, setProductosPopulares] = useState()
+
+    
   
 
   
@@ -31,6 +34,8 @@ const CategoriesItemListContainer = () => {
 
   }, [])
     
+
+  
 
   return (
     <div>

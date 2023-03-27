@@ -1,4 +1,7 @@
 import { CartContextProvider } from './context/CartContextProvider';
+
+
+
 import ItemDetailContainer from './components/ItemDetailContainer'
 import ItemListContainer from './components/ItemList/ItemListContainer';
 
@@ -10,11 +13,13 @@ import Cart from './components/Cart/Cart';
 
 import Document from './components/Document';
 import LoginForm from './components/Login/LoginForm';
+import Signup from './components/Login/Signup';
 
 function App() {
   
   return (
-
+    
+   
     <CartContextProvider>
 
     <BrowserRouter>
@@ -27,6 +32,7 @@ function App() {
       <Routes>
 
           <Route exact path={'/'} element={<Inicio /> }></Route>
+
           <Route exact path={'/catalogo'} element={<ItemListContainer /> }></Route>
           
           <Route exact path={'/catalogo/:categoria'} element={<ItemListContainer /> }></Route>
@@ -36,6 +42,8 @@ function App() {
           <Route exact path="/cart" element={<Cart />} />
 
           <Route exact path={"/login"} element={<LoginForm /> } />
+
+          <Route exact path={'/signup'} element={<Signup />} />
           
       </Routes>
 
@@ -47,6 +55,7 @@ function App() {
 
       </BrowserRouter>
     </CartContextProvider>
+    
   )
 }
 
