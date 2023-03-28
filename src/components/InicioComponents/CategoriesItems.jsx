@@ -29,8 +29,8 @@ const CategoriesItems = ({id, imagen , nombre, precio, discount}) => {
                     
                   </h3>
                   
-                </div>                                                                                          {/* DESCUENTO */}
-                <div  className="text-md font-medium text-pink-600 "><div className='w-[70%] h-auto'>  <span className=' line-through opacity-60 '> ${precio} </span> ${Math.round(precio - (precio*0.3))}  </div> <span className='w-[7ch] text-center text-white rounded-[5px] font-semibold text-sm  absolute right-0 bottom-5   bg-pink-700'>{`${discount}`}</span></div>
+                </div>                                                                                          {/* SI HAY DESCUENTO.... */}                                                                                                                                                                                                                                                           {/* SI NO HAY DESCUENTO */}                                              
+                <div  className="text-md font-medium text-pink-600 "><div className='w-[70%] h-auto'>{discount ?  <> <span className=' line-through opacity-60 '> ${precio} </span>  {Math.round(precio - (precio*0.3))}  <span className='w-[7ch] text-center text-white rounded-[5px] font-semibold text-sm  absolute right-0 bottom-5   bg-pink-700'>{`${discount}`}</span> </> : <> <span>${precio} </span> </> }  </div> </div>
               </div>
             </div>
          

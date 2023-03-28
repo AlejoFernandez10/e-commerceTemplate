@@ -57,7 +57,7 @@ const Inicio = () => {
   return (
 
     <div className='h-full w-full'>
-    <motion.div  animate={{scale:1}} initial={{scale:0}} transition={{duration:.7}}   className='w-[100%] h-[100vh] relative m-auto transition duration-300    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
+    <motion.div  animate={{opacity:1}} initial={{opacity:0}} transition={{duration:1}}   className='w-[100%] h-[100vh] relative m-auto transition duration-300    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
 
       <div   className='w-full h-full  rounder-2xl   duration-500 flex flex-col items-center  sm:flex-row justify-center  md:w-[100%] xl:w-[85%] xl:m-auto '>
         
