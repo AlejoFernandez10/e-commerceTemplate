@@ -10,7 +10,7 @@ const Item = ({id, nombre, imagen, precio}) => {
     <div>       
           
             
-          <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[10px] w-[245px] ">
+          <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[5px] w-[245px] ">
               <div className=" m-auto overflow-hidden  rounded-md bg-gray-50  group-hover:opacity-75  lg:aspect-none lg:h-[8rem]">
                
                 <Link to={`/item/${id}`}>                

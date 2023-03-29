@@ -52,7 +52,7 @@ const Cart =() => {
     return(
        
       <div className="pt-[100px] w-full h-full flex justify-center items-center " >
-      <div className="max-w-[1000px] w-[95%] mt-[50px] bg-gray-100 min-h-[70vh] md:w-[80%] lg:w-[60%] m-auto rounded-[7px] flex justify-center items-center" >
+      <div className="max-w-[1000px] w-[95%] mt-[50px] bg-gray-100 min-h-[70vh] md:w-[80%] lg:w-[60%] m-auto rounded-[5px] flex justify-center items-center" >
         <h3 className="text-center text-[30px] text-gray-700 ">Carrito Vacío...</h3>
       </div>
       </div>
@@ -61,7 +61,7 @@ const Cart =() => {
       return(
         <>
         <div className=" mx-auto shadow-sm max-w-screen-2xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 ">
-          <div className=" mx-auto max-w-5xl bg-gray-100 mt-[100px] rounded-[7px]" >
+          <div className=" mx-auto max-w-5xl bg-gray-100 mt-[100px] rounded-[5px]" >
             <header className="text-center pt-[15px]">
               <h1 className="text-xl font-bold text-gray-900 sm:text-3xl pt-4">Your Cart</h1>
             </header>

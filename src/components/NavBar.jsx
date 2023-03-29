@@ -84,7 +84,7 @@ function classNames(...classes) {
                 </Link>
                 
                 <div className="hidden sm:ml-6 sm:block w-full "> 
-                  <div className="flex justify-center space-x-4 gap-2 ml-8">
+                  <div className="flex justify-center space-x-4 gap-2 ml-8 lg:ml-20">
 
                     {navigation.map((item) => (
                       <Link
