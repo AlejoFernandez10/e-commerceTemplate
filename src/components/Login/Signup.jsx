@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import formImg from '../../assets/signupImg.jpg'
+import formImg from '../../assets/signupImg.webp'
 
 import { useState } from 'react'
 

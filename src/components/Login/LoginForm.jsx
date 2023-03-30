@@ -2,7 +2,7 @@ import React from 'react'
 
 
 import { LockClosedIcon } from '@heroicons/react/20/solid'
-import formImg from '../../assets/formImg.jpg'
+import formImg from '../../assets/formImg.webp'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { UserAuth } from '../../context/CartContextProvider'
@@ -88,8 +88,9 @@ export default function LoginForm() {
               <input
                 type="email"
                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                placeholder="Correo Electrónico..."
+                placeholder="Try: testuser@gmail.com"
                 onChange={(e)=> setEmail(e.target.value)}
+                autoComplete="off"
               />
     
               <span
@@ -120,8 +121,9 @@ export default function LoginForm() {
               <input
                 type="password"
                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                placeholder="Contraseña..."
+                placeholder="Try: testuser"
                 onChange={(e)=> setPassword(e.target.value)}
+                autoComplete="Off"
               />
     
               <span

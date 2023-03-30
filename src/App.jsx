@@ -14,6 +14,8 @@ import Cart from './components/Cart/Cart';
 import Document from './components/Document';
 import LoginForm from './components/Login/LoginForm';
 import Signup from './components/Login/Signup';
+import Footer from './components/Footer';
+import CheckOut from './components/Cart/CheckOut';
 
 function App() {
   
@@ -41,6 +43,8 @@ function App() {
 
           <Route exact path="/cart" element={<Cart />} />
 
+          <Route exact path="/checkout" element={ <CheckOut /> } />
+
           <Route exact path={"/login"} element={<LoginForm /> } />
 
           <Route exact path={'/signup'} element={<Signup />} />
@@ -50,8 +54,11 @@ function App() {
       
         
       </div>
+      <Footer />
       
       <Document />
+
+      
 
       </BrowserRouter>
     </CartContextProvider>

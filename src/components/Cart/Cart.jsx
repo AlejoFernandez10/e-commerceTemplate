@@ -3,6 +3,7 @@ import React from "react"
 import { useState, useContext } from "react"
 import { CartContext } from "../../context/CartContextProvider"
 
+import { Link } from "react-router-dom";
 import withReactContent from 'sweetalert2-react-content';
 import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
@@ -34,16 +35,8 @@ const Cart =() => {
 
   //PAGO REALIZADO
 
-  const pagoRealizado= ()=>{
-    MySwal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Compra exitosa!',
-      text:"Disfrute su producto!",
-      confirmButtonText:"Continuar",
-      
-    })
-  }
+  
+
 
 
   
@@ -100,6 +93,7 @@ const Cart =() => {
                      </div>
          
                      <div className="flex flex-1 items-center justify-end gap-2">
+
                        <form>
                          <label for="Line1Qty" className="sr-only"> Cant: </label>
          
@@ -112,7 +106,7 @@ const Cart =() => {
                          />
                        </form>
          
-                       <button className="text-gray-600 transition hover:text-red-600" >
+                       <button className="text-gray-600 transition hover:text-red-600 " >
                          <span className="sr-only">Remove item</span>
          
                          <svg
@@ -191,12 +185,12 @@ const Cart =() => {
                   </div>
       
                   <div className="flex justify-end">
-                    <button
-                      onClick={()=> pagoRealizado() & setTimeout(()=>{ setCart([])}, 2000)}
+                    <Link to={'/checkout'}
+                      
                       className="block rounded bg-purple-600 px-5 py-3 text-sm text-gray-100 transition hover:bg-pink-500"
                     >
                       Ir a pagar
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

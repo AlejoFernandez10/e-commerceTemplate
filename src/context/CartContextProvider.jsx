@@ -46,7 +46,6 @@ useEffect(()=>{
 
     setUser(currentUser)
     
-    console.log(currentUser)
 
   })
   return ()=>{

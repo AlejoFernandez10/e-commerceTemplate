@@ -1,21 +1,21 @@
 .inicio-prods-container .img-catalogo-container  .catalogo {
-    background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .7) ), url("../../assets/irAlCatalogo.jpg") no-repeat center center ;
+    background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .7) ), url("../../assets/irAlCatalogo.webp") no-repeat center center ;
     background-size: cover;
     transition: 200ms;
 }
 
 .inicio-prods-container .img-catalogo-container .gridSecondCol  .jewelry{
-    background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .7) ), url("../../assets/irAJewelry.jpg") no-repeat center center ;
+    background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .7) ), url("../../assets/irAJewelry.webp") no-repeat center center ;
     background-size: cover;
     transition: 200ms;
 }
 .inicio-prods-container .img-catalogo-container .gridSecondCol  .women{
-    background: linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .7) ), url("../../assets/irAWomen.jpg") no-repeat center center ;
+    background: linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .7) ), url("../../assets/irAWomen.webp") no-repeat center center ;
     background-size: cover;
     transition: 200ms;
 }
 .inicio-prods-container .img-catalogo-container  .electronics{
-    background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .7) ), url("../../assets/irAClothing.jpg") no-repeat center center  ;
+    background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .7) ), url("../../assets/irAClothing.webp") no-repeat center center  ;
     background-size: cover;
     transition: 200ms;
 }

@@ -2,11 +2,19 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
+import {MdChevronLeft, MdChevronRight, MdOutlineAttachMoney } from 'react-icons/md'
+import {FaShippingFast } from 'react-icons/fa'
+import {BiSupport } from 'react-icons/bi'
+import {RiRefund2Line} from 'react-icons/ri'
+import {GiReturnArrow} from 'react-icons/gi'
+
 const ProdsDestacados = () => {
 
 
   return (
+
     <section   className='mt-[50px] bg-gray-100'>
+
                     <motion.div initial={{y:200}} whileInView={{y:0}} transition={{duration:.5}} viewport={{once:true}} className= "max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
                       <div className="grid grid-cols-1 gap-4 md:flex flex-col lg:items-stretch">
 
@@ -32,30 +40,30 @@ const ProdsDestacados = () => {
 
                          
                           <li>
-                          <Link to={"/catalogo"} class="group block">
+                          <Link to={"/catalogo"} className="group block">
 
-                                  <div class="relative w-full min-h-[300px]  md:min-h-[400px] ">
+                                  <div className="relative w-full min-h-[300px]  md:min-h-[400px] ">
                                     <img
                                       src="https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                                       alt=""
-                                      class="absolute inset-0 h-full w-full object-cover opacity-100 rounded group-hover:opacity-0"
+                                      className="absolute inset-0 h-full w-full object-cover opacity-100 rounded group-hover:opacity-0"
                                     />
 
                                     <img
                                       src="https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                                       alt=""
-                                      class="absolute inset-0 h-full w-full object-cover opacity-0 rounded group-hover:opacity-100"
+                                      className="absolute inset-0 h-full w-full object-cover opacity-0 rounded group-hover:opacity-100"
                                     />
                                   </div>
 
-                                  <div class="mt-3 p-2 pt-0">
+                                  <div className="mt-3 p-2 pt-0">
                                     <h3
-                                      class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                                      className="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4"
                                     >
                                       Small Headphones
                                     </h3>
 
-                                    <p class="mt-1.5 max-w-[40ch] text-xs text-gray-500">
+                                    <p className="mt-1.5 max-w-[40ch] text-xs text-gray-500">
                                       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                     </p>
                                     <div className="mt-1.5 flex items-center justify-between text-gray-900 ">
@@ -69,29 +77,29 @@ const ProdsDestacados = () => {
                             
                             <li className='pt-20 sm:pt-[130px] '>
 
-                              <Link to={"/catalogo"} class="group block">
-                                  <div class="relative min-h-[300px] md:min-h-[400px] ">
+                              <Link to={"/catalogo"} className="group block">
+                                  <div className="relative min-h-[300px] md:min-h-[400px] ">
                                     <img
                                       src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
                                       alt=""
-                                      class="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded"
+                                      className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded"
                                     />
 
                                     <img
                                       src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
                                       alt=""
-                                      class="absolute inset-0 h-full w-full object-cover opacity-0 rounded group-hover:opacity-100"
+                                      className="absolute inset-0 h-full w-full object-cover opacity-0 rounded group-hover:opacity-100"
                                     />
                                   </div>
 
-                                  <div class="mt-3 p-2 pt-0">
+                                  <div className="mt-3 p-2 pt-0">
                                     <h3
-                                      class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                                      className="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4"
                                     >
                                       Small Headphones
                                     </h3>
 
-                                    <p class="mt-1.5 max-w-[40ch] text-xs text-gray-500">
+                                    <p className="mt-1.5 max-w-[40ch] text-xs text-gray-500">
                                       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                     </p>
                                     <div className="mt-1.5 flex items-center justify-between text-gray-900 ">
@@ -116,6 +124,17 @@ const ProdsDestacados = () => {
                       </div>
                       
                     </motion.div>
+
+                    <div className='w-full min-h-[10vh] flex flex-wrap max-w-[1200px] m-auto  justify-between p-3 mt-[50px] sm:mt-0'>
+
+                    <div className='text-gray-500 flex items-center'><FaShippingFast size={50} color={"rgb(219,39,119)"} opacity={"0.6"} className='mr-3'/> <p>Delivery rápido y seguro</p>       </div>
+                    <div className='text-gray-500 flex items-center'><GiReturnArrow size={50} color={"rgb(219,39,119)"} opacity={"0.6"} className='mr-3 '/> <p className='mr-3'>Devoluciones en 24hs</p> </div>
+                    <div className='text-gray-500 flex items-center'><RiRefund2Line size={50} color={"rgb(219,39,119)"} opacity={"0.6"} className='mr-3'/> <p>Rembolsos</p>  </div>
+                    <div className='text-gray-500 flex items-center'><BiSupport size={50} color={"rgb(219,39,119)"} opacity={"0.6"} className='mr-3'/> <p>Soporte de calidad</p> </div>
+
+                    </div>
+
+                    
                 </section>
   )
 }

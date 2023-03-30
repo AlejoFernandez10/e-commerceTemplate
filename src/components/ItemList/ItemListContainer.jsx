@@ -249,7 +249,7 @@ const ItemListContainer = () => {
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <Link to={`/catalogo/${`women`}`}
+                  <Link 
                     
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -262,7 +262,7 @@ const ItemListContainer = () => {
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <Link to={`/catalogo/${`men`}`}
+                  <Link
                     
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -275,7 +275,7 @@ const ItemListContainer = () => {
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <Link to={`/catalogo/${`jewelery`}`}
+                  <Link
                     
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
