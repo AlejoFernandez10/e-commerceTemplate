@@ -7,16 +7,51 @@ import { Link } from 'react-router-dom';
 import withReactContent from 'sweetalert2-react-content';
 import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
+import { collection, addDoc, getFirestore } from 'firebase/firestore';
+
 const MySwal = withReactContent(swal)
 
 const CheckOut = () => {
 
 
-    const [cart, setCart] = useContext(CartContext)
+    const [cart, setCart] = useContext(CartContext);
+
+    
+    const [orderId, setOrderId] = useState(null)
+    const [nombre, setNombre] = useState("")
+    const [email, setEmail] = useState("")
+    const [numero, setNumero] = useState("")
+    const [card, setCard] = useState("")
+    const [cardExpiration, setCardExpiration] = useState("")
+    const [cardCvc, setCardCvc] = useState("")
+    const [pais, setPais] = useState("")
+    const [codigoPostal, setCodigoPostal] = useState("")
+    const [prods, setProds] = useState([])
+
+    const db = getFirestore()
+
+    const order = {
+      nombre,
+      email,
+      numero,
+      card,
+      cardExpiration,
+      cardCvc,
+      pais,
+      codigoPostal,
+      prods
+    }
+
+    const handleSubmit = (e)=>{
+      e.preventDefault();
+
+      addDoc(orderCollection, order)
+      .then(( {id} ) => setOrderId((id)))
+    }
 
     
     
-    
+    const orderCollection = collection(db, "orden")
     
 
     let precioTotal = 0;
@@ -116,7 +151,7 @@ const CheckOut = () => {
 
                         <div className="bg-white py-12 md:py-24">
                           <div className="mx-auto max-w-lg px-4 lg:px-8">
-                            <form className="grid grid-cols-6 gap-4">
+                            <form onSubmit={handleSubmit} className="grid grid-cols-6 gap-4">
                               <div className="col-span-3">
                                 <label
                                   htmlFor="FirstName"
@@ -129,6 +164,7 @@ const CheckOut = () => {
                                   type="text"
                                   id="FirstName"
                                   className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                  onChange={(e)=>setNombre(e.target.value)}
                                 />
                               </div>
 
@@ -144,6 +180,7 @@ const CheckOut = () => {
                                   type="text"
                                   id="LastName"
                                   className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                  
                                 />
                               </div>
 
@@ -156,6 +193,7 @@ const CheckOut = () => {
                                   type="email"
                                   id="Email"
                                   className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                  onChange={(e)=>setEmail(e.target.value)}
                                 />
                               </div>
 
@@ -168,6 +206,7 @@ const CheckOut = () => {
                                   type="tel"
                                   id="Phone"
                                   className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                  onChange={(e)=>setNumero(e.target.value)}
                                 />
                               </div>
 
@@ -185,6 +224,7 @@ const CheckOut = () => {
                                       id="CardNumber"
                                       placeholder="Card Number"
                                       className="relative mt-1 w-full rounded-t-md border-gray-200 focus:z-10 sm:text-sm"
+                                      onChange={(e)=>setCard(e.target.value)}
                                     />
                                   </div>
 
@@ -197,6 +237,8 @@ const CheckOut = () => {
                                         id="CardExpiry"
                                         placeholder="Expiry Date"
                                         className="relative w-full rounded-bl-md border-gray-200 focus:z-10 sm:text-sm"
+                                        onChange={(e)=>setCardExpiration(e.target.value)}
+
                                       />
                                     </div>
 
@@ -208,6 +250,7 @@ const CheckOut = () => {
                                         id="CardCVC"
                                         placeholder="CVC"
                                         className="relative w-full rounded-br-md border-gray-200 focus:z-10 sm:text-sm"
+                                        onChange={(e)=>setCardCvc(e.target.value)}
                                       />
                                     </div>
                                   </div>
@@ -226,6 +269,7 @@ const CheckOut = () => {
                                     <select
                                       id="Country"
                                       className="relative w-full rounded-t-md border-gray-200 focus:z-10 sm:text-sm"
+                                      onChange={(e)=>setPais(e.target.value)}
                                     >
                                       <option>Argentina</option>
                                       <option>Chile</option>
@@ -244,13 +288,14 @@ const CheckOut = () => {
                                       id="PostalCode"
                                       placeholder="ZIP/Post Code"
                                       className="relative w-full rounded-b-md border-gray-200 focus:z-10 sm:text-sm"
+                                      onChange={(e)=>setCodigoPostal(e.target.value)}
                                     />
                                   </div>
                                 </div>
                               </fieldset>
 
                               <div className="col-span-6">
-                                <button onClick={(e)=> e.preventDefault() & pagoRealizado() }
+                                <button onClick={(e)=> setProds(cart) & pagoRealizado() }
                                   className="block w-full rounded-md bg-black p-2.5 text-sm text-center text-white transition hover:shadow-lg"
                                 >
                                   Pagar

@@ -10,6 +10,10 @@ import { UserAuth } from '../../context/CartContextProvider'
 import { useState } from 'react'
 
 
+import withReactContent from 'sweetalert2-react-content';
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
+
+const MySwal = withReactContent(swal)
 
 
 export default function LoginForm() {
@@ -30,8 +34,24 @@ export default function LoginForm() {
       e.preventDefault();
 
       setError('');
+
       try{
         await signIn(email, password)
+
+        
+          MySwal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Sesion iniciada!',
+            showConfirmButton: false,
+            timer: 1000
+          })
+
+          setTimeout(()=>{
+            
+            navigate('/')
+          },1100)
+        
       } catch(e){
         setError(e.message)
         console.log(e.messsage)

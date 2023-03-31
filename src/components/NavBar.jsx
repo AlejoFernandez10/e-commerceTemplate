@@ -20,7 +20,7 @@ const  {user, logout}  = UserAuth();
 const navigation = [
   { name: 'Inicio', href: '/', current: false },
   { name: 'Catalogo', href: '/catalogo', current: false },
-  { name: 'Mis compras', href: `${user ? '/miscompras' : '/login' }`, current: false },
+  { name: 'Servicios', href: `${user ? '/miscompras' : '/login' }`, current: false },
   { name: 'Nosotros', href: '#', current: false },
 ]
 
