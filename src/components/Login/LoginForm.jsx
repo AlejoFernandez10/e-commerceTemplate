@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
 import { LockClosedIcon } from '@heroicons/react/20/solid'
@@ -65,6 +65,12 @@ export default function LoginForm() {
     setLoader(false)
 
   },800)
+
+
+ 
+
+  
+
 
 
   if(loader){
@@ -146,7 +152,7 @@ export default function LoginForm() {
                 autoComplete="Off"
               />
     
-              <span
+              <span onClick={()=> setBolean(true)}
                 className="absolute inset-y-0 right-0 grid place-content-center px-4"
               >
                 <svg

@@ -164,8 +164,8 @@ const ItemDetail = ({prods}) => {
                  
                </div>
 
-               {producto.categoria != "men"}
-      
+               {producto.categoria != "electronics"  &&
+               
                <form className="mt-8">
                <fieldset>
                  <legend className="mb-1 text-sm font-medium">Color</legend>
@@ -299,7 +299,12 @@ const ItemDetail = ({prods}) => {
                  </div>
                </fieldset>
      
-               <div className="mt-8 flex gap-4">
+             </form>
+             
+               
+              }
+              
+              <div className="mt-8 flex gap-4">
                  <div>                  
      
 
@@ -320,7 +325,8 @@ const ItemDetail = ({prods}) => {
                     
                  
                </div>
-             </form>
+      
+               
               
                
              </div>

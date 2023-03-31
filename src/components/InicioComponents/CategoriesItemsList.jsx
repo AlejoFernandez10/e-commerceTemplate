@@ -39,6 +39,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
 
 
     
+        
 
    
    

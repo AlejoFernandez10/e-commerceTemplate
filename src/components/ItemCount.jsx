@@ -14,7 +14,11 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
   const [count, setCount ] = useState(1);
    
   const sumarCantidad = ()=>{
-    setCount(count + 1)
+
+    if(count < 5 ){
+      
+      setCount(count + 1)
+    }
   }
 
   const resCantidad = ()=>{
@@ -50,7 +54,7 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
 
   const prodAgregado= ()=>{
     MySwal.fire({
-      position: 'top-right',
+      position: 'center',
       icon: 'success',
       title: 'Product agregado!',
       showConfirmButton: false,
