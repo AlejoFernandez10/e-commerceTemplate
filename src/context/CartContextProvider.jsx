@@ -68,7 +68,7 @@ useEffect(()=>{
 
 
   return (
-    <UserContext.Provider value={{createUser, user, logout, signIn}}>
+    <UserContext.Provider value={{createUser, user, logout , signIn}}>
 
     <CartContext.Provider value={ [cart, setCart]   }>
 

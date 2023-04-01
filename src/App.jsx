@@ -76,6 +76,8 @@ function App() {
             <Route exact path={"/login"} element={<LoginForm /> } />
   
             <Route exact path={'/signup'} element={<Signup />} />
+
+            
             
         </Routes>
   

@@ -15,7 +15,7 @@ import { UserAuth } from '../context/CartContextProvider'
 export default function Navbar() {
 
 
-const  {user, logout}  = UserAuth();
+const  { user }  = UserAuth();
 
 const navigation = [
   { name: 'Inicio', href: '/', current: false },
@@ -30,7 +30,7 @@ function classNames(...classes) {
 
 
 
-
+  console.log(user)
 
 
     const [cart, setCart] = useContext(CartContext);

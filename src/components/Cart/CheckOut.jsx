@@ -4,11 +4,13 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../../context/CartContextProvider'
 import {  useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import withReactContent from 'sweetalert2-react-content';
-import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
 
+
+
+import withReactContent from 'sweetalert2-react-content';
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 const MySwal = withReactContent(swal)
 
 const CheckOut = () => {
