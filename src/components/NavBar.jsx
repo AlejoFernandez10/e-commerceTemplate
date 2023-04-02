@@ -30,7 +30,7 @@ function classNames(...classes) {
 
 
 
-  console.log(user)
+
 
 
     const [cart, setCart] = useContext(CartContext);

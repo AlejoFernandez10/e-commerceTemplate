@@ -3,7 +3,7 @@ import React from 'react'
 import { useState, useContext } from 'react'
 import { CartContext } from '../../context/CartContextProvider'
 import {  useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { UserAuth } from '../../context/CartContextProvider';
 
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
 
@@ -24,6 +24,11 @@ const CheckOut = () => {
   
     },1200)
 
+
+    const {user} = UserAuth()
+
+    const userId = user.uid
+
     
     const [orderId, setOrderId] = useState(null)
     const [nombre, setNombre] = useState("")
@@ -40,6 +45,7 @@ const CheckOut = () => {
 
     const order = {
       nombre,
+      userId,
       email,
       numero,
       card,

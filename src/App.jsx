@@ -16,6 +16,7 @@ import LoginForm from './components/Login/LoginForm';
 import Signup from './components/Login/Signup';
 import Footer from './components/Footer';
 import CheckOut from './components/Cart/CheckOut';
+import Settings from './components/Account/Settings';
 
 
 
@@ -76,6 +77,8 @@ function App() {
             <Route exact path={"/login"} element={<LoginForm /> } />
   
             <Route exact path={'/signup'} element={<Signup />} />
+
+            <Route exact path={'/settings'} element={<Settings />} />
 
             
             
