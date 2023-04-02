@@ -36,21 +36,7 @@ export default function LoginForm() {
       setError('');
 
       try{
-        await signIn(email, password)
-
-        
-          MySwal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Sesion iniciada!',
-            showConfirmButton: false,
-            timer: 1000
-          })
-
-          setTimeout(()=>{
-            
-            navigate('/')
-          },1100)
+        await signIn(email, password)        
         
       } catch(e){
         setError(e.message)
@@ -68,7 +54,21 @@ export default function LoginForm() {
 
 
  
+  const alerta = ()=>{
+    MySwal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Sesion iniciada!',
+      text:"Redirigiendo para iniciar sesion...",
+      showConfirmButton: false,
+      timer: 2000
+    })         
 
+    setTimeout(()=>{
+            
+      navigate('/')
+    },2000)
+  }
   
 
 
@@ -184,11 +184,11 @@ export default function LoginForm() {
             <p className="text-sm text-gray-500">No tenés cuenta? <Link className="underline text-purple-500"  to={'/signup'}>Crear cuenta</Link>
             </p>
     
-            <button
+            <button onClick={alerta}
               type="submit"
               className="inline-block rounded-lg bg-purple-500 px-5 py-3 text-sm font-medium text-white transition duration-200 hover:bg-purple-400"
             >
-              Sign in
+              Iniciar Sesion
             </button>
           </div>
         </form>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import formImg from '../../assets/signupImg.webp'
 
@@ -7,6 +7,11 @@ import { useState } from 'react'
 
 import { UserAuth } from '../../context/CartContextProvider'
  
+
+import withReactContent from 'sweetalert2-react-content';
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
+
+const MySwal = withReactContent(swal)
 
 const Signup = () => {
 
@@ -19,7 +24,7 @@ const Signup = () => {
 
    const {createUser} = UserAuth()
 
-
+   const navigate = useNavigate()
 
    // Creates account
   const handleSubmit = async (e)=>{
@@ -28,7 +33,9 @@ const Signup = () => {
 
     setError('');
     try{
-      await createUser(email, password, displayName, secondName)
+      await createUser(email, password, displayName, secondName)      
+
+      
 
     } catch(e){
       setError(e.message)
@@ -40,7 +47,21 @@ const Signup = () => {
 
 
   
-
+  const alerta = ()=>{
+    MySwal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Cuenta creada con éxito!',
+      text:"Redirigiendo para iniciar sesion...",
+      showConfirmButton: false,
+      timer: 2000
+    })
+    setTimeout(()=>{
+        
+      navigate('/')
+      
+    },2000)
+  }
 
 
 
@@ -261,7 +282,7 @@ if(loader){
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
 
-            <button type='submit' className="inline-block shrink-0 rounded-md border border-purple-500  px-12 py-3 text-sm font-medium text-gray-800 transition duration-200 hover:text-white hover:bg-purple-500">
+            <button onClick={alerta} type='submit' className="inline-block shrink-0 rounded-md border border-purple-500  px-12 py-3 text-sm font-medium text-gray-800 transition duration-200 hover:text-white hover:bg-purple-500">
               Crear cuenta
             </button>
 

@@ -39,6 +39,21 @@ export const CartContextProvider = ({children}) => {
 
 }
 
+
+
+
+  //LOGOUT
+
+  const logout=()=>{
+    return signOut(auth)
+  }
+
+  //SIGNIN
+    const signIn = (email, password)=>{
+      return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    
 //SI HAY USUARIO .....
 useEffect(()=>{
 
@@ -53,19 +68,6 @@ useEffect(()=>{
   }
 
 }, [])
-
-
-  //LOGOUT
-
-  const logout=()=>{
-    return signOut(auth)
-  }
-
-  //SIGNIN
-    const signIn = (email, password)=>{
-      return signInWithEmailAndPassword(auth, email, password)
-    }
-
 
   return (
     <UserContext.Provider value={{createUser, user, logout , signIn}}>

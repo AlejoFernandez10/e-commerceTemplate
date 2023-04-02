@@ -25,9 +25,9 @@ const CheckOut = () => {
     },1200)
 
 
-    const {user} = UserAuth()
+    
 
-    const userId = user.uid
+    
 
     
     const [orderId, setOrderId] = useState(null)
@@ -45,7 +45,6 @@ const CheckOut = () => {
 
     const order = {
       nombre,
-      userId,
       email,
       numero,
       card,

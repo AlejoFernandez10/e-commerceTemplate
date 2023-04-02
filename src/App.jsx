@@ -16,7 +16,8 @@ import LoginForm from './components/Login/LoginForm';
 import Signup from './components/Login/Signup';
 import Footer from './components/Footer';
 import CheckOut from './components/Cart/CheckOut';
-import Settings from './components/Account/Settings';
+
+import HistorialCompras from './components/Account/HistorialCompras';
 
 
 
@@ -78,7 +79,7 @@ function App() {
   
             <Route exact path={'/signup'} element={<Signup />} />
 
-            <Route exact path={'/settings'} element={<Settings />} />
+            <Route exact path={'/settings'} element={<HistorialCompras />} />
 
             
             
