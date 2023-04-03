@@ -18,6 +18,7 @@ const Cart =() => {
 
   cart.forEach(producto => {
       precioTotal += ( producto.precio * producto.cantidad)
+      
   });
 
 
@@ -56,7 +57,7 @@ const Cart =() => {
         <div className=" mx-auto shadow-sm max-w-screen-2xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 ">
           <div className=" mx-auto max-w-5xl bg-gray-100 mt-[100px] rounded-[5px]" >
             <header className="text-center pt-[15px]">
-              <h1 className="text-xl font-bold text-gray-900 sm:text-3xl pt-4">Your Cart</h1>
+              <h1 className="text-xl font-bold text-gray-900 sm:text-3xl pt-4">Tu carrito</h1>
             </header>
       
             <div className="mt-8 px-4 py-2 w-full flex flex-col">
@@ -180,7 +181,7 @@ const Cart =() => {
                         />
                       </svg>
       
-                      <p className="whitespace-nowrap text-xs">2 Discounts Applied</p>
+                      <p className="whitespace-nowrap text-xs">Sin descuentos aplicados</p>
                     </span>
                   </div>
       

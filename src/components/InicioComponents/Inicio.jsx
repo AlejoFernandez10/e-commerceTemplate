@@ -16,19 +16,19 @@ const Inicio = () => {
       h2Content: "Headsets",
       discount:"50% Off",
       url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/product-38.png',
-      mt:'50px'
+      
     },
     {
       h2Content: "Zapatillas",
       discount:"40% Off",
       url:'https://portotheme.com/html/wolmart/assets/images/demos/demo1/sliders/shoes.png'
-      ,mt:'20px'
+      
     },
     {      
       h2Content: "Smart Watch",
       discount:"30% Off",
       url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-05.png'      
-      ,mt:'0px'
+      
     }
   ]
 
@@ -66,7 +66,7 @@ const Inicio = () => {
         
         </div>
        
-       <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) `, marginTop:`${sliderItems[currentIndex].mt}` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[50%] md:w-[50%] md:h-[40%] md:ml-auto md transition duration-200'  > </div>
+       <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[50%] md:w-[50%] md:h-[40%] md:ml-auto md transition duration-200'  > </div>
        </div>
 
 

@@ -12,6 +12,8 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
     
   const [cart, setCart] = useContext(CartContext)
   const [count, setCount ] = useState(1);
+  const [local, setLocal] = useState(``)
+
    
   const sumarCantidad = ()=>{
 
@@ -31,14 +33,29 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
   const addToCart = ()=>{
 
     setCart((currentItems)=>{
+      
       const isItem = currentItems.find((item) => item.id === id)
+
+      
 
       if(isItem){
 
         return currentItems.map((item)=>{
+
+          const newLocal = localStorage.setItem(`iId_${item.id}`, item.id)
+
+          setLocal(newLocal)
+          
           
           if(item.id === id){
-            return{... item, cantidad: item.cantidad + count}
+            
+            return{
+              ... item,
+               cantidad: item.cantidad + count,
+               
+               
+              }
+             
           }
           else{
             return item
@@ -49,7 +66,10 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
       }
 
     })
+
   }
+
+  
 
 
   const prodAgregado= ()=>{
@@ -72,7 +92,7 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
     
     </div>
     <div
-     onClick={()=> addToCart() & prodAgregado()}
+     onClick={()=> addToCart()  & prodAgregado()}
      className="block cursor-pointer rounded bg-transparent border border-pink-600 px-5 py-3 text-xs font-medium text-black transition duration-200 hover:bg-pink-600 hover:text-white"
    >
      Add to Cart

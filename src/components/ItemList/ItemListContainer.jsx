@@ -53,7 +53,7 @@ const ItemListContainer = () => {
 
 
 
-    if(loader){
+    if(loader === true){
       return(
         <div className='h-[50vh] w-full flex flex-col justify-center items-center'>
           <span className='text-[30px] mt-[100px] w-12 h-12  border-4 border-purple-500 border-b-transparent rounded-[50%] inline-block box-border animate-spin'>
@@ -97,7 +97,7 @@ const ItemListContainer = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
@@ -178,11 +178,11 @@ const ItemListContainer = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute  left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <Link to={`/catalogo/${`women`}`}
+                  <Link 
                     
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -195,7 +195,7 @@ const ItemListContainer = () => {
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <Link to={`/catalogo/${`men`}`}
+                  <Link 
                     
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -208,7 +208,7 @@ const ItemListContainer = () => {
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <Link to={`/catalogo/${`jewelery`}`}
+                  <Link
                     
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
