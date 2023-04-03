@@ -79,7 +79,7 @@ function App() {
   
             <Route exact path={'/signup'} element={<Signup />} />
 
-            <Route exact path={'/settings'} element={<HistorialCompras />} />
+            <Route  path={'/historialdecompras'} element={ <HistorialCompras />} />
 
             
             
