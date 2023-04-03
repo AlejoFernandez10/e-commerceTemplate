@@ -13,7 +13,7 @@ const HistorialItemList = ({items}) => {
   if(user.email === items.email){
         
     return(
-        <div className=' rounded w-full bg-gray-50 flex flex-col  p-2'>
+        <div className=' rounded w-full bg-gray-50 flex flex-col  gap-3 p-2'>
             
             {items.prods.map((prod)=>(
                 

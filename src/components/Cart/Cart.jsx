@@ -3,7 +3,7 @@ import React, { useEffect } from "react"
 import { useState, useContext } from "react"
 import { CartContext } from "../../context/CartContextProvider"
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import withReactContent from 'sweetalert2-react-content';
 import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
@@ -15,7 +15,7 @@ const MySwal = withReactContent(swal)
 const Cart =() => {
   
   
-  
+  const [cart, setCart] = useContext(CartContext)
   
   let precioTotal = 0;
 
@@ -30,7 +30,7 @@ const Cart =() => {
       icon: 'success',
       title: 'Carrito vaciado!',
       showConfirmButton: false,
-      timer: 1000
+      timer: 900
     })
   }
 
@@ -39,16 +39,24 @@ const Cart =() => {
   
   const localCart = JSON.parse(localStorage.getItem('cart'))
 
-  console.log(localCart)
   
-  localCart.forEach(producto => {
+  
+  cart.forEach(producto => {
     precioTotal += ( producto.precio * producto.cantidad)
     
   });
 
-  
+  const navigate = useNavigate();
 
-  if(localCart.length === 0){
+  const redirigirAInicio = ()=>{
+    setTimeout(()=>{
+
+      navigate('/')
+
+    },1000)
+  }
+
+  if(cart.length === 0){
     return(
        
       <div className="pt-[100px] w-full h-full flex justify-center items-center " >
@@ -66,8 +74,8 @@ const Cart =() => {
               <h1 className="text-xl font-bold text-gray-900 sm:text-3xl pt-4">Tu carrito</h1>
             </header>
       
-            <div className="mt-8 px-4 py-2 w-full flex flex-col">
-              <ul className="space-y-4">
+            <div className="mt-8 px-4 py-2 w-full  flex flex-col">
+              <ul className="space-y-4 flex flex-col gap-4">
 
                   {localCart.map((prod)=>(
                     
@@ -75,7 +83,7 @@ const Cart =() => {
                      <img
                        srcSet={prod.imagen}
                        alt=""
-                       className="h-16 w-16 rounded object-cover"
+                       className="h-14 w-14 sm:h-20 sm:w-20 rounded object-contain"
                      />
          
                      <div>
@@ -138,7 +146,7 @@ const Cart =() => {
       
               </ul>
 
-              <button onClick={()=>  carritoVaciado() & localStorage.clear()} className="self-end py-2 px-4 rounded-[5px] border-[1px] border-red-600  transition duration-200 text-[14px]  hover:text-white hover:bg-red-600">Vaciar carrito</button>
+              <button onClick={()=>  carritoVaciado() & localStorage.clear() & setCart([]) & redirigirAInicio()} className="self-end py-2 px-4 rounded-[5px] border-[1px] border-red-600  transition duration-200 text-[14px]  hover:text-white hover:bg-red-600">Vaciar carrito</button>
 
               <div className="mt-8 flex justify-end border-t border-gray-100 pt-8 ">
                 

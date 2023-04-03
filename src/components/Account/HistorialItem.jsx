@@ -17,10 +17,10 @@ const HistorialItem = ( {id, categoria, imagen, precio, nombre, cantidad} ) => {
                 <img
                   srcSet={imagen}
                   alt=""
-                  className=" h-[140px] w-[140px] mb-3 rounded object-contain sm:mr-2" 
+                  className=" h-[140px] w-[140px] mb-10 sm:mb-0 rounded object-contain sm:mr-2" 
                 />
 
-            <div className='w-full m-auto max-w-[400px] sm:max-w-[1200px]'>
+            <div className='w-full m-auto mt-0 max-w-[350px]  mb-1 sm:max-w-[1200px]'>
           <h3  className="text-sm text-gray-900  font-semibold">{nombre}</h3>
 
           <dl className="mt-1 space-y-px text-[10px] text-gray-600">
@@ -43,7 +43,7 @@ const HistorialItem = ( {id, categoria, imagen, precio, nombre, cantidad} ) => {
             </div>
         
 
-            <div className='flex flex-col m-auto mt-4  w-full justify-self-end justify-center   sm:items-end'>
+            <div className='flex flex-col m-auto mt-4   w-full justify-self-end justify-center  gap-2  sm:gap-0 sm:items-end'>
 
             <button className=" bg-purple-600 rounded text-sm m-auto max-w-[350px] w-full py-2 px-14 text-white font-medium sm:px-1 sm:m-0 sm:max-w-[188px]" >
              

@@ -25,12 +25,22 @@ const UserContext = createContext()
 export const CartContextProvider = ({children}) => {
 
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const localCart = localStorage.getItem("cart");
+    return localCart ? JSON.parse(localCart) : [];
+  });
+
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+
 
   const [ user , setUser] = useState({})
 
   
-  localStorage.setItem('cart', JSON.stringify(cart))
+  
     // NEW USER
 
   const createUser = (email, password, displayName, secondName) =>{

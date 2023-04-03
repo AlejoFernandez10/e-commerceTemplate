@@ -6,8 +6,9 @@ import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 
 import CategoriesItemListContainer from './CategoriesItemListContainer'
 
-import { AnimatePresence, motion } from 'framer-motion'
+import {  motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+
 
 const Inicio = () => {
 
@@ -17,17 +18,20 @@ const Inicio = () => {
       discount:"50% Off",
       url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/product-38.png',
       
+      
     },
     {
       h2Content: "Zapatillas",
       discount:"40% Off",
-      url:'https://portotheme.com/html/wolmart/assets/images/demos/demo1/sliders/shoes.png'
+      url:'https://portotheme.com/html/wolmart/assets/images/demos/demo1/sliders/shoes.png',
+      
       
     },
     {      
       h2Content: "Smart Watch",
       discount:"30% Off",
-      url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-05.png'      
+      url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-05.png',
+          
       
     }
   ]
@@ -36,26 +40,30 @@ const Inicio = () => {
   const [currentIndex, setCurrentIndex]= useState(0);
   
 
+  const changeImg = (index)=>{
+    setCurrentIndex(index)
   
+  }
 
-  const autoSlide = ()=>{
+  const slideRight = ()=>{
 
-    setTimeout(()=>{    
+      
       const isLastSlide = currentIndex === sliderItems.length - 1;
 
       const newIndex = isLastSlide ? 0  : currentIndex + 1;
       setCurrentIndex(newIndex)
-    }, 3000)
+   
   }
-  autoSlide()
+
 
   return (
 
     <div className='h-full w-full '>
     <motion.div  animate={{opacity:1}} initial={{opacity:0}} transition={{duration:1}}   className='relative w-[100%] h-[100vh]  m-auto transition duration-300    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
 
-      <div   className='w-full h-full  rounder-2xl   duration-500 flex flex-col items-center  sm:flex-row justify-center  md:w-[100%] xl:w-[85%] xl:m-auto '>
-        
+    <BsChevronCompactLeft className='opacity-0 text-gray-700 cursor-pointer hover:opacity-100  rounded-[50%] absolute left-3 top-[45%] lg:opacity-70'  size={50} />
+      <div   className='w-full h-full  rounder-2xl  m-auto duration-500 flex flex-col items-center  sm:flex-row justify-center  md:w-[100%] xl:w-[85%] xl:m-auto '>
+      
         <div className=' h-[30%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto   '>
 
           <div className='text-sm text-center text-pink-900 '>Tienda E-commerce</div>
@@ -67,9 +75,15 @@ const Inicio = () => {
         </div>
        
        <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[50%] md:w-[50%] md:h-[40%] md:ml-auto md transition duration-200'  > </div>
+      
        </div>
-
-
+       <BsChevronCompactRight className='opacity-0 text-gray-700 cursor-pointer   rounded-[50%] absolute right-3 bottom-[45%] lg:opacity-70' onClick={()=> slideRight()}  size={50} />
+      
+      <div className='absolute h-[100px ] w-[150px] flex  bottom-[10%] left-[45%] gap-3'>
+        <button onClick={()=> changeImg(0)} className='h-[15px] w-[15px] rounded-[50%] bg-gray-100 border-[1px] border-gray-400'  ></button>
+        <button onClick={()=> changeImg(1)} className='h-[15px] w-[15px] rounded-[50%] bg-gray-100 border-[1px] border-gray-400' ></button>
+        <button onClick={()=> changeImg(2)} className='h-[15px] w-[15px] rounded-[50%] bg-gray-100 border-[1px] border-gray-400' ></button>
+      </div>
             
 
     </motion.div>
