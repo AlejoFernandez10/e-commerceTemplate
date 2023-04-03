@@ -42,11 +42,7 @@ const LoginNav = () => {
     }
   }  
 
-  function handleOptionClick(option) {
-    setSelectedOption(option);
-    onSelect(option);
-    setIsOpen(false);
-  }
+  
 
   
 
@@ -88,7 +84,7 @@ const LoginNav = () => {
   
               <li className='text-sm px-3 h-[50%] flex items-center hover:bg-gray-100'>
   
-              <Link to={'/historialdecompras'}  onClick={() => handleOptionClick(option)}>
+              <Link to={'/historialdecompras'} >
                  Historial de compras
               </Link>
   

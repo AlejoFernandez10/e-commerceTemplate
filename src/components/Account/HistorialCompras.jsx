@@ -27,13 +27,9 @@ const HistorialCompras = () => {
     })
     
    }, [])
-
-   const {user} = UserAuth();
-   
-     
     
 
-   if(user){
+   
 
     return(
       <div className='min-h-[100vh] w-full pt-[150px] flex  justify-center'>
@@ -54,7 +50,7 @@ const HistorialCompras = () => {
         
       
     )
-   }
+   
     
    
    

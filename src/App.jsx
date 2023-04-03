@@ -79,7 +79,7 @@ function App() {
   
             <Route exact path={'/signup'} element={<Signup />} />
 
-            <Route  path={'/historialdecompras'} element={ <HistorialCompras />} />
+            <Route exact path={'/historialdecompras'} element={ <HistorialCompras />} />
 
             
             
