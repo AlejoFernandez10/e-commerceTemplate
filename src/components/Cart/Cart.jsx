@@ -40,7 +40,7 @@ const Cart =() => {
 
 
 
-  
+  console.log(cart)
 
   if(cart.length === 0){
     return(
@@ -51,7 +51,7 @@ const Cart =() => {
       </div>
       </div>
     )
-    }else{
+    }else {
       return(
         <>
         <div className=" mx-auto shadow-sm max-w-screen-2xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 ">

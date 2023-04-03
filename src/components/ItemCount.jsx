@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { CartContext } from '../context/CartContextProvider';
 
 import withReactContent from 'sweetalert2-react-content';
@@ -12,7 +12,7 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
     
   const [cart, setCart] = useContext(CartContext)
   const [count, setCount ] = useState(1);
-  const [local, setLocal] = useState(``)
+  
 
    
   const sumarCantidad = ()=>{
@@ -29,45 +29,49 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
     }
   }
 
+  const [local, setLocal] = useState(``);
+  const [productId, setProductId] = useState(null);
+  
+  useEffect(() => {
+    if (productId) {
+      const storedValue = localStorage.getItem(`iId_${productId}`);
+      if (storedValue) {
+        setLocal(storedValue);
+      }
+    }
+  }, [productId]);
+  
+  const addToCart = () => {
 
-  const addToCart = ()=>{
+    setCart(currentItems => {
 
-    setCart((currentItems)=>{
-      
-      const isItem = currentItems.find((item) => item.id === id)
+      const isItem = currentItems.find(item => item.id === id);
 
-      
+      if (isItem) {
+        return currentItems.map(item => {
 
-      if(isItem){
-
-        return currentItems.map((item)=>{
-
-          const newLocal = localStorage.setItem(`iId_${item.id}`, item.id)
-
-          setLocal(newLocal)
-          
-          
-          if(item.id === id){
+          if (item.id === id) {
+            const newLocal = item.id;
+            localStorage.setItem(`iId_${item.id}`, newLocal);
+            setProductId(item.id);
+            return {
+              ...item,
+              cantidad: item.cantidad + count,
+            };
             
-            return{
-              ... item,
-               cantidad: item.cantidad + count,
-               
-               
-              }
-             
-          }
-          else{
-            return item
+          } else {
+            return item;
           }
         });
-      }else{
-        return [... currentItems, {id, cantidad: count, precio, imagen, nombre, categoria}]
+      } else {
+        const newLocal = id;
+        localStorage.setItem(`iId_${id}`, newLocal);
+        setProductId(id);
+        return [...currentItems, { id, cantidad: count, precio, imagen, nombre, categoria }];
       }
-
-    })
-
-  }
+    });
+  };
+  
 
   
 

@@ -20,7 +20,7 @@ const  { user }  = UserAuth();
 const navigation = [
   { name: 'Inicio', href: '/', current: false },
   { name: 'Catalogo', href: '/catalogo', current: false },
-  { name: 'Servicios', href: `${user ? '/miscompras' : '/login' }`, current: false },
+  { name: 'Servicios', href: `#`, current: false },
   { name: 'Nosotros', href: '#', current: false },
 ]
 
@@ -121,10 +121,11 @@ function classNames(...classes) {
             <div className="space-y-1 px-2 pt-2 pb-3">
 
               {navigation.map((item) => (
-                <Disclosure.Button
+                <Link
+                
                   key={item.name}
                   as="a"
-                  href={item.href}
+                  to={item.href}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-700 hover:bg-pink-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
@@ -132,7 +133,7 @@ function classNames(...classes) {
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
-                </Disclosure.Button>
+                </Link>
               ))}
             </div>
 
