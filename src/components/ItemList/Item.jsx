@@ -10,8 +10,8 @@ const Item = ({id, nombre, imagen, precio}) => {
     <div>       
           
             
-          <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[5px] w-[245px] ">
-              <div className=" m-auto overflow-hidden  rounded-md bg-gray-50  group-hover:opacity-75  lg:aspect-none lg:h-[8rem]">
+          <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[5px] w-[245px] shadow-lg ">
+              <div className=" m-auto overflow-hidden  rounded-md   group-hover:opacity-75  lg:aspect-none lg:h-[8rem]">
                
                 <Link to={`/item/${id}`}>                
                 <img
@@ -21,7 +21,7 @@ const Item = ({id, nombre, imagen, precio}) => {
                 /></Link>
 
               </div>
-              <div className="w-[95%] m-auto relative flex h-[150px] justify-between flex-col text-left bg-gray-50 p-4 rounded-b-[10px]">
+              <div className="w-[95%] m-auto relative flex h-[150px] justify-between flex-col text-left  p-3 rounded-b-[10px]">
                 <div>
                   <h3  className=" text-sm text-gray-700 py-3 text-[10px] ">
                     
