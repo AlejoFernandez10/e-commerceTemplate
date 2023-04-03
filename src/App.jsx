@@ -28,7 +28,7 @@ function App() {
 
   setTimeout(()=>{
     setloader(false)
-  }, 4000)
+  }, 2000)
 
 
   if(loader){

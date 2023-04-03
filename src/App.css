@@ -27,7 +27,7 @@
   height: 100%;
   width: 0;
   background: #ec4899;
-  animation: 4s prog ease-in infinite;
+  animation: 2s prog ease-in infinite;
 }
 
 @keyframes prog {

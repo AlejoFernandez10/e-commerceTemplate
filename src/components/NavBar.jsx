@@ -1,10 +1,10 @@
 
 import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { CartContext } from '../context/CartContextProvider'
 import { useContext } from 'react'
 import CartLogo from '../assets/carrito.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import LoginNav from './Login/LoginNav'
 
@@ -37,7 +37,7 @@ function classNames(...classes) {
 
     
 
-
+  const navigate = useNavigate()
 
     const cantidad = cart.reduce((acumulador, actual) => {
       return acumulador + actual.cantidad;
@@ -118,22 +118,17 @@ function classNames(...classes) {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3">
+            <div className="space-y-1 px-2 pt-2 pb-3 flex flex-col">
 
               {navigation.map((item) => (
-                <Link
-                
-                  key={item.name}
-                  as="a"
-                  to={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-700 hover:bg-pink-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
+                <Disclosure.Button key={item.name}  as="a" onClick={()=> navigate(`${item.href}`)} className={classNames(
+                  item.current ? 'bg-gray-900 text-white' : 'text-gray-700 hover:bg-pink-700 hover:text-white',
+                  'block rounded-md px-3 py-2 text-base font-medium'
+                )} 
+                aria-current={item.current ? 'page' : undefined}
                 >
-                  {item.name}
-                </Link>
+                    {item.name} 
+                </Disclosure.Button>
               ))}
             </div>
 

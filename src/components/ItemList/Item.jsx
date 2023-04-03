@@ -21,9 +21,9 @@ const Item = ({id, nombre, imagen, precio}) => {
                 /></Link>
 
               </div>
-              <div className="w-[95%] m-auto relative flex h-[150px] justify-between flex-col text-left  p-3 rounded-b-[10px]">
+              <div className="w-[95%] m-auto relative flex h-[150px] justify-between flex-col text-left  p-5 pt-7 rounded-b-[10px]">
                 <div>
-                  <h3  className=" text-sm text-gray-700 py-3 text-[10px] ">
+                  <h3  className=" text-sm text-gray-600 py-3 text-[10px] ">
                     
                       
                       {nombre}
@@ -31,7 +31,17 @@ const Item = ({id, nombre, imagen, precio}) => {
                   </h3>
                   
                 </div>                                                                                          
-                <p  className="text-sm font-medium text-pink-600"   >${precio}</p>
+                
+                <div  className="text-sm font-medium text-pink-600 flex justify-between"   >
+
+                <p className='text-gray-900 font-semibold'>${precio}</p>  
+
+                <span >   
+                  Hasta 6 cuotas
+                </span>
+
+                
+                 </div>
                 
               </div>
             </div>
