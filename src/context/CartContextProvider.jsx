@@ -30,7 +30,7 @@ export const CartContextProvider = ({children}) => {
   const [ user , setUser] = useState({})
 
   
-  
+  localStorage.setItem('cart', JSON.stringify(cart))
     // NEW USER
 
   const createUser = (email, password, displayName, secondName) =>{

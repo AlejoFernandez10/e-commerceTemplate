@@ -51,7 +51,9 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
         return currentItems.map(item => {
 
           if (item.id === id) {
+            
             const newLocal = item.id;
+            
             localStorage.setItem(`iId_${item.id}`, newLocal);
             setProductId(item.id);
             return {
@@ -65,6 +67,7 @@ const ItemCount = ({id, precio, imagen, nombre, categoria}) => {
         });
       } else {
         const newLocal = id;
+
         localStorage.setItem(`iId_${id}`, newLocal);
         setProductId(id);
         return [...currentItems, { id, cantidad: count, precio, imagen, nombre, categoria }];

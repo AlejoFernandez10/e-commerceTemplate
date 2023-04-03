@@ -1,25 +1,25 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { useState, useContext } from "react"
 import { CartContext } from "../../context/CartContextProvider"
-
 import { Link } from "react-router-dom";
+
 import withReactContent from 'sweetalert2-react-content';
 import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
+
+
+
 
 const MySwal = withReactContent(swal)
 
 const Cart =() => {
   
-  const [cart, setCart] = useContext(CartContext)
+  
   
   
   let precioTotal = 0;
 
-  cart.forEach(producto => {
-      precioTotal += ( producto.precio * producto.cantidad)
-      
-  });
+  
 
 
   //Alerta cuando se vacia el carrito
@@ -37,12 +37,18 @@ const Cart =() => {
   //PAGO REALIZADO
 
   
+  const localCart = JSON.parse(localStorage.getItem('cart'))
 
+  console.log(localCart)
+  
+  localCart.forEach(producto => {
+    precioTotal += ( producto.precio * producto.cantidad)
+    
+  });
 
+  
 
-  console.log(cart)
-
-  if(cart.length === 0){
+  if(localCart.length === 0){
     return(
        
       <div className="pt-[100px] w-full h-full flex justify-center items-center " >
@@ -63,7 +69,7 @@ const Cart =() => {
             <div className="mt-8 px-4 py-2 w-full flex flex-col">
               <ul className="space-y-4">
 
-                  {cart.map((prod)=>(
+                  {localCart.map((prod)=>(
                     
                      <li className=" flex items-center gap-4" key={prod.id}>
                      <img
@@ -132,7 +138,7 @@ const Cart =() => {
       
               </ul>
 
-              <button onClick={()=> setCart([]) & carritoVaciado()} className="self-end py-2 px-4 rounded-[5px] border-[1px] border-red-600  transition duration-200 text-[14px]  hover:text-white hover:bg-red-600">Vaciar carrito</button>
+              <button onClick={()=>  carritoVaciado() & localStorage.clear()} className="self-end py-2 px-4 rounded-[5px] border-[1px] border-red-600  transition duration-200 text-[14px]  hover:text-white hover:bg-red-600">Vaciar carrito</button>
 
               <div className="mt-8 flex justify-end border-t border-gray-100 pt-8 ">
                 

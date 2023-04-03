@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useState, useEffect } from 'react'
 import { getFirestore, collection, getDocs} from 'firebase/firestore'
-import { UserAuth } from '../../context/CartContextProvider'
+
 import HistorialItemList from './HistorialItemList'
 
 const HistorialCompras = () => {
