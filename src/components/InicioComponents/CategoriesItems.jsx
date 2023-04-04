@@ -7,9 +7,9 @@ const CategoriesItems = ({id, imagen , nombre, precio, discount}) => {
   
 
   return (
-    <div>       
+    <div className='pl-[25px] py-2'>       
           
-            <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[5px] w-[245px] shadow-xl">
+            <div key={id} className="group whitespace-normal relative hover:cursor-pointer rounded-[5px] w-[245px]  shadow-md " >
               <div className=" m-auto overflow-hidden  rounded-md   group-hover:opacity-75  lg:aspect-none lg:h-[8rem]">
                
                 <Link to={`/item/${id}`}>                

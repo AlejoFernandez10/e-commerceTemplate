@@ -8,9 +8,9 @@ import CategoriesItemListContainer from './CategoriesItemListContainer'
 
 
 import { Link } from 'react-router-dom'
-import shoes from '../../assets/slider/shoes.png'
-import reloj from '../../assets/slider/reloj.png'
-import auriculares from '../../assets/slider/auriculares.png'
+import shoes from '../../assets/slider/shoes.webp'
+import reloj from '../../assets/slider/reloj.webp'
+import auriculares from '../../assets/slider/auriculares.webp'
 
 const Inicio = () => {
 
@@ -49,6 +49,12 @@ const Inicio = () => {
     const newIndex = (currentIndex + 1) % sliderItems.length;
     setCurrentIndex(newIndex);
   };
+
+  const slideLeft = () => {
+    const newIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+    setCurrentIndex(newIndex);
+  };
+  
 
 
   useEffect(() => {
@@ -104,7 +110,7 @@ const Inicio = () => {
     <div className='h-full w-full '>
     <div     className='relative w-[100%] h-[100vh]  m-auto    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
 
-    <BsChevronCompactLeft className='opacity-7 text-gray-700 cursor-pointer hover:opacity-100  rounded-[50%] absolute left-3 top-[50%] lg:opacity-70'  size={40} />
+    <BsChevronCompactLeft className='opacity-7 text-gray-700 cursor-pointer hover:opacity-100  rounded-[50%] absolute left-3 top-[50%] lg:opacity-70'  size={40} onClick={()=> slideLeft() & setAutoSlide(false) & setResSlide(true)}/>
       <div   className='w-full h-full  rounder-2xl  m-auto duration-500 flex flex-col items-center  md:flex-row justify-center  md:w-[90%] lg:w-[85%] xl:w-[80%] xl:m-auto '>
       
         <div className=' h-[30%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto   '>
@@ -120,7 +126,7 @@ const Inicio = () => {
        <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[40%] md:w-[45%] md:h-[35%] lg:h-[40%] lg:w-[50%] md:ml-auto md transition duration-200'  > </div>
       
        </div>
-       <BsChevronCompactRight className='opacity-7 text-gray-700 cursor-pointer   rounded-[50%] absolute right-3 bottom-[40%] lg:opacity-70' onClick={()=> slideRight() & setAutoSlide(false) & setResSlide(true) }  size={40} />
+       <BsChevronCompactRight className='opacity-7 text-gray-700 cursor-pointer   rounded-[50%] absolute right-3 bottom-[45%] lg:opacity-70' onClick={()=> slideRight() & setAutoSlide(false) & setResSlide(true) }  size={40} />
       
       
             

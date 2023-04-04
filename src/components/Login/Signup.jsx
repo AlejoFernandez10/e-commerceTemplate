@@ -45,9 +45,17 @@ const Signup = () => {
 
   }  
 
+  const formCheck = ()=>{
+
+    if(email != "" & password != "" & displayName != ""){
+      alertaVerde()
+    }else{
+      alertaRoja()
+    }
+  } 
 
   
-  const alerta = ()=>{
+  const alertaVerde = ()=>{
     MySwal.fire({
       position: 'center',
       icon: 'success',
@@ -61,6 +69,18 @@ const Signup = () => {
       navigate('/')
       
     },2000)
+  }
+
+  const alertaRoja = ()=>{
+    MySwal.fire({
+      position: 'top-right',
+      icon: 'error',
+      title: 'Error',
+      text:"Falta completar algunos campos para crear la cuenta",
+      showConfirmButton: false,
+      timer: 2000
+    })
+    
   }
 
 
@@ -282,7 +302,7 @@ if(loader){
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
 
-            <button onClick={alerta} type='submit' className="inline-block shrink-0 rounded-md border border-purple-500  px-12 py-3 text-sm font-medium text-gray-800 transition duration-200 hover:text-white hover:bg-purple-500">
+            <button onClick={( ) => formCheck()} type='submit' className="inline-block shrink-0 rounded-md border border-purple-500  px-12 py-3 text-sm font-medium text-gray-800 transition duration-200 hover:text-white hover:bg-purple-500">
               Crear cuenta
             </button>
 
