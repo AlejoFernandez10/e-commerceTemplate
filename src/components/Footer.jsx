@@ -261,6 +261,10 @@ const Footer = () => {
   </div>
 </footer>
 
+    <p className='w-full flex justify-center'> <span >Developed by <a href="https://www.linkedin.com/in/alejo-fernandez-23821b243/" className='text-purple-500 hover:underline' >Alejo Fernandez</a> </span></p>
+
+   
+
     </>
   )
 }
