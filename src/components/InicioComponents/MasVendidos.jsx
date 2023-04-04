@@ -11,7 +11,7 @@ const MasVendidos = () => {
 
 
     <section  className='mt-[100px] bg-gray-100'>
-                    <motion.div initial={{y:200}} whileInView={{y:0}} transition={{duration:.5}} viewport={{once:true}}  className="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
+                    <motion.div initial={{y:200}} whileInView={{y:0}} transition={{duration:.2}} viewport={{once:true}}  className="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
                       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:items-stretch">
                         <div className="grid p-6 bg-gray-100 rounded place-content-center sm:p-8 shadow-xl ">
                           <div className="max-w-md mx-auto  ">

@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-import {MdChevronLeft, MdChevronRight, MdOutlineAttachMoney } from 'react-icons/md'
+
 import {FaShippingFast } from 'react-icons/fa'
 import {BiSupport } from 'react-icons/bi'
 import {RiRefund2Line} from 'react-icons/ri'
@@ -15,7 +15,7 @@ const ProdsDestacados = () => {
 
     <section   className='mt-[50px] bg-gray-100'>
 
-                    <motion.div initial={{y:200}} whileInView={{y:0}} transition={{duration:.5}} viewport={{once:true}} className= "max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
+                    <motion.div initial={{y:200}} whileInView={{y:0}} transition={{duration:.2}} viewport={{once:true}} className= "max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
                       <div className="grid grid-cols-1 gap-4 md:flex flex-col lg:items-stretch">
 
 

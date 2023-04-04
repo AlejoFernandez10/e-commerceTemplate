@@ -81,7 +81,7 @@ const Inicio = () => {
    
   }
 
-  slide(3000)
+  slide(4000)
 
   const restartSlide = (timer)=>{
 
@@ -98,7 +98,7 @@ const Inicio = () => {
  
 }
 
-   restartSlide(3000)
+   restartSlide(4000)
   
 
 
@@ -110,23 +110,24 @@ const Inicio = () => {
     <div className='h-full w-full '>
     <div     className='relative w-[100%] h-[100vh]  m-auto    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
 
-    <BsChevronCompactLeft className='opacity-7 text-gray-700 cursor-pointer hover:opacity-100  rounded-[50%] absolute left-3 top-[50%] lg:opacity-70'  size={40} onClick={()=> slideLeft() & setAutoSlide(false) & setResSlide(true)}/>
-      <div   className='w-full h-full  rounder-2xl  m-auto duration-500 flex flex-col items-center  md:flex-row justify-center  md:w-[90%] lg:w-[85%] xl:w-[80%] xl:m-auto '>
+    <BsChevronCompactLeft className='opacity-7 text-gray-700 cursor-pointer hover:opacity-100  rounded-[50%] absolute left-3 top-[60%] md:top-[45%] lg:opacity-70'  size={40} onClick={()=> slideLeft() & setAutoSlide(false) & setResSlide(true)}/>
+       
+      <div   className='w-full h-full  rounder-2xl  m-auto duration-500 flex flex-col items-center  md:flex-row justify-center   md:w-[90%] lg:w-[85%] xl:w-[80%] xl:m-auto '>
       
-        <div className=' h-[30%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto   '>
+        <div className=' h-[25%] flex flex-col  justify-end md:h-[30%]   md:w-[50%] md:m-auto   '>
 
           <div className='text-sm text-center text-pink-900 '>Tienda E-commerce</div>
 
-          <div className='text-center text-5xl mb-5 w-[100%] font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-purple-300 sm:text-7xl md:text-6xl  md:text-center  lg:text-[80px] xl:text-[90px] transition duration-200' ><span></span> {sliderItems[currentIndex].h2Content}</div>
+          <div className='text-center text-[50px] mb-5 w-[100%] font-extrabold text-transparent md:mb-10  bg-clip-text bg-gradient-to-r from-pink-500 to-purple-300 sm:text-7xl md:text-6xl  md:text-center  lg:text-[80px] xl:text-[90px]' ><span></span> {sliderItems[currentIndex].h2Content}</div>
           
-          <div  className='self-center  mb-10 text-gray-800' ><span className='pr-5 '>+ 100 productos</span> <Link className=' py-2 px-4   md:py-3 md:px-6 border bg-pink-500 rounded-[8px] text-gray-50  transition duration-200 md:self-center  hover:bg-pink-400' to={'/catalogo'}>Comprar!</Link></div>
+          <div  className='self-center  mb-10 text-gray-800' ><span className='pr-5 '>+ 100 productos</span> <Link className=' py-2 px-4   md:py-3 md:px-6 border bg-pink-500 rounded-[8px] text-gray-50   md:self-center  hover:bg-pink-400' to={'/catalogo'}>Comprar!</Link></div>
         
         </div>
        
-       <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[40%] md:w-[45%] md:h-[35%] lg:h-[40%] lg:w-[50%] md:ml-auto md transition duration-200'  > </div>
+       <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='h-[25%] w-[80%] mt-5 bg-center bg-contain bg-no-repeat sm:w-[40%] md:w-[46%] md:h-[30%] lg:h-[40%] lg:w-[50%] md:ml-auto '  > </div>
       
        </div>
-       <BsChevronCompactRight className='opacity-7 text-gray-700 cursor-pointer   rounded-[50%] absolute right-3 bottom-[45%] lg:opacity-70' onClick={()=> slideRight() & setAutoSlide(false) & setResSlide(true) }  size={40} />
+       <BsChevronCompactRight className='opacity-7 text-gray-700 cursor-pointer   rounded-[50%] absolute right-3 bottom-[35%] md:bottom-[50%] lg:opacity-70' onClick={()=> slideRight() & setAutoSlide(false) & setResSlide(true) }  size={40} />
       
       
             
