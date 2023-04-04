@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 
@@ -6,31 +6,33 @@ import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 
 import CategoriesItemListContainer from './CategoriesItemListContainer'
 
-import {  motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
+import shoes from '../../assets/slider/shoes.png'
+import reloj from '../../assets/slider/reloj.png'
+import auriculares from '../../assets/slider/auriculares.png'
 
 const Inicio = () => {
 
   const sliderItems = [
     {
-      h2Content: "Headsets",
+      h2Content: "Auriculares",
       discount:"50% Off",
-      url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/product-38.png',
+      url:`${auriculares}`,
       
       
     },
     {
       h2Content: "Zapatillas",
       discount:"40% Off",
-      url:'https://portotheme.com/html/wolmart/assets/images/demos/demo1/sliders/shoes.png',
+      url:`${shoes}`,
       
       
     },
     {      
-      h2Content: "Smart Watch",
+      h2Content: "Relojes",
       discount:"30% Off",
-      url:'https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-05.png',
+      url:`${reloj}`,
           
       
     }
@@ -38,62 +40,103 @@ const Inicio = () => {
 
 
   const [currentIndex, setCurrentIndex]= useState(0);
+  const [autoSlide, setAutoSlide] = useState(true)
+  const [resSlide, setResSlide] = useState(true)
+  
   
 
-  const changeImg = (index)=>{
-    setCurrentIndex(index)
+  const slideRight = () => {
+    const newIndex = (currentIndex + 1) % sliderItems.length;
+    setCurrentIndex(newIndex);
+  };
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slideRight();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
   
+  
+
+  const slide = (timer)=>{
+
+      if(resSlide){
+        setResSlide(false)
+        setTimeout(()=>{
+          const isLastSlide = currentIndex === sliderItems.length - 1;
+
+        const newIndex = isLastSlide ? 0  : currentIndex + 1;
+        setCurrentIndex(newIndex)
+        }, timer)
+      }
+      
+   
   }
 
-  const slideRight = ()=>{
+  slide(3000)
 
-      
-      const isLastSlide = currentIndex === sliderItems.length - 1;
+  const restartSlide = (timer)=>{
+
+    if(autoSlide){
+      setAutoSlide(false)
+      setTimeout(()=>{
+        const isLastSlide = currentIndex === sliderItems.length - 1;
 
       const newIndex = isLastSlide ? 0  : currentIndex + 1;
       setCurrentIndex(newIndex)
-   
-  }
+      }, timer)
+    }
+    
+ 
+}
+
+   restartSlide(3000)
+  
+
+
+
 
 
   return (
 
     <div className='h-full w-full '>
-    <motion.div  animate={{opacity:1}} initial={{opacity:0}} transition={{duration:1}}   className='relative w-[100%] h-[100vh]  m-auto transition duration-300    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
+    <div     className='relative w-[100%] h-[100vh]  m-auto    group rounded-[15px] bg-gradient-to-r from-pink-50 to-pink-200' > 
 
-    <BsChevronCompactLeft className='opacity-0 text-gray-700 cursor-pointer hover:opacity-100  rounded-[50%] absolute left-3 top-[45%] lg:opacity-70'  size={50} />
-      <div   className='w-full h-full  rounder-2xl  m-auto duration-500 flex flex-col items-center  sm:flex-row justify-center  md:w-[100%] xl:w-[85%] xl:m-auto '>
+    <BsChevronCompactLeft className='opacity-7 text-gray-700 cursor-pointer hover:opacity-100  rounded-[50%] absolute left-3 top-[50%] lg:opacity-70'  size={40} />
+      <div   className='w-full h-full  rounder-2xl  m-auto duration-500 flex flex-col items-center  md:flex-row justify-center  md:w-[90%] lg:w-[85%] xl:w-[80%] xl:m-auto '>
       
         <div className=' h-[30%] flex flex-col  justify-end gap-3  md:w-[50%] md:m-auto   '>
 
           <div className='text-sm text-center text-pink-900 '>Tienda E-commerce</div>
 
-          <div className='text-center text-5xl mb-10 w-[100%] font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-purple-300 sm:text-6xl md:text-7xl  md:text-center  lg:text-[80px] xl:text-[90px] transition duration-200' ><span></span> {sliderItems[currentIndex].h2Content}</div>
+          <div className='text-center text-5xl mb-5 w-[100%] font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-pink-500 to-purple-300 sm:text-7xl md:text-6xl  md:text-center  lg:text-[80px] xl:text-[90px] transition duration-200' ><span></span> {sliderItems[currentIndex].h2Content}</div>
           
           <div  className='self-center  mb-10 text-gray-800' ><span className='pr-5 '>+ 100 productos</span> <Link className=' py-2 px-4   md:py-3 md:px-6 border bg-pink-500 rounded-[8px] text-gray-50  transition duration-200 md:self-center  hover:bg-pink-400' to={'/catalogo'}>Comprar!</Link></div>
         
         </div>
        
-       <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[50%] md:w-[50%] md:h-[40%] md:ml-auto md transition duration-200'  > </div>
+       <div  style={{backgroundImage:`url(${sliderItems[currentIndex].url}) ` }} className='h-[30%] w-[85%] bg-center bg-contain bg-no-repeat sm:w-[40%] md:w-[45%] md:h-[35%] lg:h-[40%] lg:w-[50%] md:ml-auto md transition duration-200'  > </div>
       
        </div>
-       <BsChevronCompactRight className='opacity-0 text-gray-700 cursor-pointer   rounded-[50%] absolute right-3 bottom-[45%] lg:opacity-70' onClick={()=> slideRight()}  size={50} />
+       <BsChevronCompactRight className='opacity-7 text-gray-700 cursor-pointer   rounded-[50%] absolute right-3 bottom-[40%] lg:opacity-70' onClick={()=> slideRight() & setAutoSlide(false) & setResSlide(true) }  size={40} />
       
-      <div className='absolute h-[100px ] w-[150px] flex  bottom-[10%] left-[45%] gap-3'>
-        <button onClick={()=> changeImg(0)} className='h-[15px] w-[15px] rounded-[50%] bg-gray-100 border-[1px] border-gray-400'  ></button>
-        <button onClick={()=> changeImg(1)} className='h-[15px] w-[15px] rounded-[50%] bg-gray-100 border-[1px] border-gray-400' ></button>
-        <button onClick={()=> changeImg(2)} className='h-[15px] w-[15px] rounded-[50%] bg-gray-100 border-[1px] border-gray-400' ></button>
-      </div>
+      
             
 
-    </motion.div>
+    </div>
 
     
 
     <CategoriesItemListContainer />
 
     </div>
+
+   
   )
 }
 
 export default Inicio
+
+

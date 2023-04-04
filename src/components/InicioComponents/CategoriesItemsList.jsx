@@ -49,7 +49,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
         return (
 
             
-            <div className='inicio-prods-container w-full'>
+            <div className='inicio-prods-container w-full min-h-[100vh] bg-white'>
 
             <div className='min-h-[23vh] bg-gray-50 mb-[5rem] w-full flex justify-center '>
 
