@@ -70,12 +70,12 @@ function classNames(...classes) {
                 
                 <Link to={'/'}>
                 <div className="flex flex-shrink-0 items-center">
-                  <img
+                  <img height={10} width={10}
                     className="inline h-8 w-auto lg:hidden"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
                   />
-                  <img
+                  <img height={10} width={10}
                     className="hidden h-8 w-auto lg:inline"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
@@ -105,12 +105,12 @@ function classNames(...classes) {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               
               
-              <Link to={'/cart'} className='flex'><img srcSet={CartLogo} alt="CartImg" /><span className=' h-[20px] w-[20px] text-center mb-3 text-white bg-pink-500 m-auto rounded-[50%]  text-[14px]'>{cart ? cantidad : 0} </span></Link> 
+              <Link to={'/cart'} className='flex'><img srcSet={CartLogo} height={20} width={30} alt="CartImg" className='mt-3' /><span className=' h-[20px] w-[20px] text-center mb-3 text-white bg-pink-500 m-auto rounded-[50%]  text-[14px]'>{cart ? cantidad : 0} </span></Link> 
                       
 
                  
                 
-                { user ? <LoginNav /> : <Link to={"/login"} className='border-[1px] border-purple-500 text-gray-700 px-3 py-1 ml-4 rounded-[5px] text-[14px] transition duration-200  hover:text-white hover:bg-purple-500'>Ingresar</Link>         }
+                { user ? <LoginNav  /> : <Link to={"/login"} className='border-[1px] border-purple-500 text-gray-700 px-3 py-1 ml-4 mt-2 rounded-[5px] text-[14px] transition duration-200  hover:text-white hover:bg-purple-500'>Ingresar</Link>         }
                 
                 
               </div>

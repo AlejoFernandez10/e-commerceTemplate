@@ -54,7 +54,7 @@ const LoginNav = () => {
   
           {selectedOption || <span 
                 
-                className="block border-b-4 border-transparent pb-4 px-5 pt-6  hover:border-pink-500"
+                className="block border-b-4 border-transparent pb-[13px] px-5 mt-[36px]  hover:border-pink-500"
               >
                 <svg
                   className="h-5 w-5"
