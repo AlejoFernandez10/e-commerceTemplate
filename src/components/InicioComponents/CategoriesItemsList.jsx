@@ -80,17 +80,17 @@ const CategoriesItemsList = ({itemsPopulares}) => {
             <h2 className='text-center  justify-self-center sm:justify-self-start  ml-2 w-[15ch] text-[27px] md:text-[35px]  sm:mb-[30px] md:ml-8 lg:ml-14 text-gray-700  border-l-[3px] border-l-pink-500'>Buscar por categoría</h2>
 
                 <div  className="gridSecondCol flex flex-col sm:flex-row gap-3  ">
-                <Link to={'/catalogo'}><motion.div initial={{y:100}} whileInView={{y:0}} transition={{duration:.3}} viewport={{once:true}} className='img-catalogo catalogo relative mb-7 shadow-xl sm:mb-0 h-[35vh] w-[300px] rounded-[5px] sm:h-[55.6vh]  sm:w-[280px]  md:w-[320px]   text-gray-50 hover:text-pink-600 ' ><p className='absolute  bottom-5 left-5 text-[25px] '>Ropa </p> </motion.div></Link>
+                <Link to={'/catalogo'}><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.4}} viewport={{once:true}} className='img-catalogo catalogo relative mb-7 shadow-xl sm:mb-0 h-[35vh] w-[300px] rounded-[5px] sm:h-[55.6vh]  sm:w-[280px]  md:w-[320px]   text-gray-50 hover:text-pink-600 ' ><p className='absolute  bottom-5 left-5 text-[25px] '>Ropa </p> </motion.div></Link>
                 
                 <div className=' '>
-                    <Link to={'/catalogo/jewelery'} className=' shadow-2xl'><motion.div initial={{y:100}} whileInView={{y:0}} transition={{duration:.3}} viewport={{once:true}} className='img-catalogo shadow-xl h-[35vh] w-[300px] jewelry mb-10 relative rounded-[5px]   sm:mb-3 sm:h-[27vh]  sm:min-w-[320px] sm:mr-5    text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Joyas </p> </motion.div></Link>
-                    <Link to={`/catalogo/women`} ><motion.div initial={{y:100}} whileInView={{y:0}} transition={{duration:.3}} viewport={{once:true}} className='img-catalogo mb-0 shadow-xl h-[35vh] w-[300px] women relative rounded-[5px] sm:h-[27vh] sm:min-w-[320px] sm:mr-5     text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Mujer</p> </motion.div></Link>
+                    <Link to={'/catalogo/jewelery'} className=' shadow-2xl'><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.4}} viewport={{once:true}} className='img-catalogo shadow-xl h-[35vh] w-[300px] jewelry mb-10 relative rounded-[5px]   sm:mb-3 sm:h-[27vh]  sm:min-w-[320px] sm:mr-5    text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Joyas </p> </motion.div></Link>
+                    <Link to={`/catalogo/women`} ><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.6}} viewport={{once:true}} className='img-catalogo mb-0 shadow-xl h-[35vh] w-[300px] women relative rounded-[5px] sm:h-[27vh] sm:min-w-[320px] sm:mr-5     text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Mujer</p> </motion.div></Link>
                 </div>
                 
                 
                 </div> 
                 
-                <Link to={`/catalogo/electronics`} ><motion.div  initial={{y:100}} whileInView={{y:0}} transition={{duration:.3}} viewport={{once:true}} className='img-catalogo shadow-2xl  h-[35vh] w-[300px] electronics relative rounded-[5px] sm:h-[30vh]   sm:w-[615px] sm:mr-5 md:h-[31vh] md:w-[650px] sm:mt-3   text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Tecnología</p> </motion.div></Link>
+                <Link to={`/catalogo/electronics`} ><motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.8}} viewport={{once:true}} className='img-catalogo shadow-2xl  h-[35vh] w-[300px] electronics relative rounded-[5px] sm:h-[30vh]   sm:w-[615px] sm:mr-5 md:h-[31vh] md:w-[650px] sm:mt-3   text-gray-50  hover:text-pink-600'> <p className='absolute  bottom-5 left-5 text-[25px] '> Tecnología</p> </motion.div></Link>
 
             </div>
 
@@ -104,7 +104,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
         
                             
                 
-                <motion.div initial={{x:-200}} whileInView={{x:0}} transition={{duration:.5}} viewport={{once:true}} className='relative flex  items-center min-h-[450px] max-w-[1300px] m-auto'>
+                <motion.div  initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:.2}} viewport={{once:true}} className='relative flex  items-center min-h-[450px] max-w-[1300px] m-auto'>
 
                     
                     <MdChevronLeft className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%]'  onClick={slideLeft} size={40} />
