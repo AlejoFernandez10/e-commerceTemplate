@@ -98,17 +98,17 @@ const CategoriesItemsList = ({itemsPopulares}) => {
 
 
                 <div className=' flex max-w-[1210px] m-auto ' >
-                    <h2 className='  mb-[40px]   mt-[100px] text-[26px] sm:text-[30px] md:text-[32px] text-gray-700 px-3 font-light border-l-4 border-pink-600 '> <span className='text-gray-700'>Productos populares</span></h2>       
+                    <h2 className='  mb-[40px]   mt-[100px] text-[26px] sm:text-[30px] md:text-[32px] ml-4 text-gray-700 px-3 font-light border-l-4 border-pink-600 '> <span className='text-gray-700'>Productos populares</span></h2>       
                 </div>
                
         
                             
                 
-                <motion.div  initial={{opacity:0.2}} whileInView={{opacity:1}} transition={{duration:.2}} viewport={{once:true}} className='relative flex  items-center min-h-[450px] max-w-[1300px] m-auto'>
+                <motion.div  initial={{opacity:0.2}} whileInView={{opacity:1}} transition={{duration:.2}} viewport={{once:true}} className='relative flex  items-center min-h-[40px] max-w-[1350px] m-auto'>
 
                     
                     <MdChevronLeft className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%]'  onClick={slideLeft} size={40} />
-                <div id='slider'  className='w-full h-full overflow-x-scroll flex whitespace-nowrap scroll-smooth  scrollbar-hide'>
+                <div id='slider'  className='w-full h-full overflow-x-scroll flex whitespace-nowrap gap-4 scroll-smooth  scrollbar-hide'>
                      
                      {itemsPopulares.map((item)=>(
 
@@ -126,7 +126,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
              
          
                  </div>
-                 <MdChevronRight className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%]' onClick={slideRight} size={40} />
+                 <MdChevronRight className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%] ml-2' onClick={slideRight} size={40} />
                 </motion.div>
                 
 
@@ -140,17 +140,17 @@ const CategoriesItemsList = ({itemsPopulares}) => {
 
                 
                 <div className=' flex max-w-[1210px] m-auto' >
-                    <h2 className=' mb-[40px]   mt-[100px] text-[26px] sm:text-[30px] md:text-[32px] text-gray-700 px-3  border-l-4 border-pink-600 '> <span className='text-gray-700'>Productos nuevos</span></h2>       
+                    <h2 className=' mb-[40px]   mt-[100px] text-[26px] sm:text-[30px] ml-4 md:text-[32px] text-gray-700 px-3  border-l-4 border-pink-600 '> <span className='text-gray-700'>Productos nuevos</span></h2>       
                 </div>
         
                            {/* PRODUCTOS NUEVOS */} 
                 
-                <motion.div initial={{x:200}} whileInView={{x:0}} transition={{duration:.2}} viewport={{once:true}} className='relative flex min-h-[400px] items-center max-w-[1300px] m-auto'>
+                <motion.div initial={{x:200}} whileInView={{x:0}} transition={{duration:.2}} viewport={{once:true}} className='relative flex min-h-[40px] items-center max-w-[1350px] m-auto'>
 
                     
-                    <MdChevronLeft className='opacity-70  cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%]' onClick={slideLeft2} size={40} />
+                    <MdChevronLeft className='opacity-70  cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%] mr-2' onClick={slideLeft2} size={40} />
                 
-                <div id='slider2'  className='w-full h-full overflow-x-scroll flex flex-row whitespace-nowrap scroll-smooth   scrollbar-hide'>
+                <div id='slider2'  className='w-full h-full overflow-x-scroll flex flex-row gap-4 whitespace-nowrap scroll-smooth   scrollbar-hide'>
                      
                      {itemsPopulares.map((item)=>(
 
@@ -167,7 +167,7 @@ const CategoriesItemsList = ({itemsPopulares}) => {
              
          
                  </div>
-                 <MdChevronRight className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%] ' onClick={slideRight2} size={40} />
+                 <MdChevronRight className='opacity-70 cursor-pointer hover:opacity-100 bg-gray-300 rounded-[50%] ml-2' onClick={slideRight2} size={40} />
                 </motion.div>
 
 

@@ -22,7 +22,7 @@ const ProdsDestacados = () => {
                         <div className="m-auto grid p-6 max-w-[1050px] w-full bg-gray-100 rounded place-content-start sm:p-8 sm:pt-2 sm:pb-0  ">
                           <div className="w-full   ">
                             <header>
-                              <h2 className="text-xl font-semibold  text-gray-900 sm:text-3xl pl-[10px]  border-l-[4px] border-pink-500 md:text-xxl  ">Productos Destacados</h2>
+                              <h2 className="text-xl font-semibold  text-gray-900 sm:text-3xl pl-[10px]  border-l-[4px] border-pink-500 md:text-xxl  ">Destacados</h2>
 
                               <p className="mt-4 text-gray-500 md:text-sm lg:text-[17px]">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas

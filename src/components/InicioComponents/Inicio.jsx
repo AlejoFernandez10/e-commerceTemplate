@@ -60,7 +60,7 @@ const Inicio = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       slideRight();
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [currentIndex]);
   

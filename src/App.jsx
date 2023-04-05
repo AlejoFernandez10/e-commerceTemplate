@@ -19,7 +19,7 @@ import CheckOut from './components/Cart/CheckOut';
 
 import HistorialCompras from './components/Account/HistorialCompras';
 
-
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
@@ -54,7 +54,11 @@ function App() {
    
       <CartContextProvider>
   
-      <BrowserRouter>
+      <BrowserRouter >
+
+      <ScrollToTop />
+
+      
   
         <div className="App  ">
         
@@ -62,6 +66,8 @@ function App() {
         
         
         <Routes>
+
+          
   
             <Route exact path={'/'} element={<Inicio /> }></Route>
   
@@ -92,8 +98,7 @@ function App() {
         
         <Document />
   
-        
-  
+       
         </BrowserRouter>
       </CartContextProvider>
       
